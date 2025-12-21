@@ -185,7 +185,7 @@ export default function ContactForm() {
           <option value="Cook Islands">Cook Islands</option>
           <option value="Coral Sea Islands">Coral Sea Islands</option>
           <option value="Costa Rica">Costa Rica</option>
-          <option value="Cote D'Ivoire">Cote D'Ivoire</option>
+          <option value="Cote D&apos;Ivoire">Cote D&apos;Ivoire</option>
           <option value="Croatia">Croatia</option>
           <option value="Cuba">Cuba</option>
           <option value="Curaçao">Curaçao</option>

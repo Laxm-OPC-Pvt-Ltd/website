@@ -1,36 +1,33 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useMemo, useState, useEffect } from "react";
 import type { Post } from "@/data/posts";
 import { posts as basePosts } from "@/data/posts";
-import type { Metadata } from "next";
-
-export const metadata: Metadata = {
-  title: "Admin",
-  description: "Client-side admin for managing blog content locally.",
-  robots: { index: false, follow: false },
-};
 
 function getPassword() {
   return process.env.NEXT_PUBLIC_ADMIN_PASSWORD || "admin";
 }
 
 export default function Admin() {
-  const [authed, setAuthed] = useState(
-    () => localStorage.getItem("laxmAdmin") === "true"
-  );
-  const [items, setItems] = useState<Post[]>(() => {
+  const [authed, setAuthed] = useState(false);
+  const [items, setItems] = useState<Post[]>(basePosts);
+
+  useEffect(() => {
+    // Hydrate client-only state from localStorage
+    if (typeof window === "undefined") return;
+    const savedAuthed = localStorage.getItem("laxmAdmin") === "true";
+    if (savedAuthed) setTimeout(() => setAuthed(true), 0);
+
     const raw = localStorage.getItem("laxmPosts");
     if (raw) {
       try {
-        return JSON.parse(raw) as Post[];
+        // Avoid synchronous setState in effect by deferring
+        setTimeout(() => setItems(JSON.parse(raw) as Post[]), 0);
       } catch {
-        return basePosts;
+        // ignore parse errors
       }
-    } else {
-      return basePosts;
     }
-  });
+  }, []);
   const [form, setForm] = useState<Partial<Post>>({});
   const [error, setError] = useState<string | null>(null);
 
