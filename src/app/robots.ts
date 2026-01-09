@@ -8,6 +8,6 @@ export default function robots(): MetadataRoute.Robots {
         allow: "/",
       },
     ],
-    sitemap: "https://www.laxm.example/sitemap.xml",
+    sitemap: "https://www.thelaxm.com/sitemap.xml",
   };
 }

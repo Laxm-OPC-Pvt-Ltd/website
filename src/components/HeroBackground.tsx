@@ -2,9 +2,9 @@ import React from "react";
 
 export default function HeroBackground() {
   return (
-    <div className="absolute inset-0 -z-10 overflow-hidden bg-[#0B1F33]">
+    <div className="absolute inset-0 -z-10 overflow-hidden bg-[var(--navy)]">
       {/* Deep Radial Base */}
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,_rgba(20,40,60,1)_0%,_rgba(11,31,51,1)_100%)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,_var(--navy-light)_0%,_var(--navy)_100%)]" />
 
       {/* Primary Rotating Rays (Gold) */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[150vmax] h-[150vmax] animate-[spin_60s_linear_infinite] opacity-20 pointer-events-none">
@@ -26,8 +26,8 @@ export default function HeroBackground() {
       <div className="absolute inset-0 grid-overlay opacity-10 mix-blend-soft-light" />
 
       {/* Vignette / Fade to bottom */}
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_transparent_20%,_#0B1F33_100%)] opacity-90" />
-      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-[#ffffff] to-transparent opacity-10" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_transparent_20%,_var(--navy)_100%)] opacity-90" />
+      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-[var(--background)] to-transparent" />
     </div>
   );
 }

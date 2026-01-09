@@ -1,145 +1,129 @@
 @import "tailwindcss";
 
 :root {
+  /* Modern Premium Palette */
   --background: #ffffff;
-  --foreground: #1f2937;
-  --navy: #0b1f33;
+  --foreground: #020617; /* Replaced Slate 900 with Deep Navy for rich contrast */
+  
+  /* Primary Brand Colors */
+  --navy: #020617; /* Deepest Navy - Almost Black */
+  --navy-light: #0f172a; /* Slate 900 - Rich Dark Blue */
+  
+  /* Accent Colors */
   --gold: #d4af37;
-  --ivory: #f7f6f2;
-  --steel: #6b7280;
-  --footer-text: #c9cdd6;
+  --gold-light: #fcd34d;
+  --gold-dark: #b45309;
+  
+  /* Neutrals */
+  --ivory: #ffffff; /* Pure White for cleaner look */
+  --text-primary: #020617; /* Deep Navy */
+  --text-secondary: #334155; /* Slate 700 - Dark Blue Grey (No light grey) */
+  --border: #e2e8f0; /* Slate 200 */
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-navy: var(--navy);
+  --color-navy-light: var(--navy-light);
   --color-gold: var(--gold);
+  --color-gold-light: var(--gold-light);
+  --color-gold-dark: var(--gold-dark);
   --color-ivory: var(--ivory);
-  --color-steel: var(--steel);
+  --color-text-primary: var(--text-primary);
+  --color-text-secondary: var(--text-secondary);
+  --color-border: var(--border);
+  
   --font-sans: var(--font-inter);
   --font-heading: var(--font-poppins);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  
+  --animate-float: float 6s ease-in-out infinite;
+  --animate-fade-in-up: fade-in-up 0.8s ease-out both;
+  --animate-pulse-glow: pulse-glow 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: var(--font-inter), system-ui, -apple-system, Segoe UI, Roboto,
-    Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+  font-family: var(--font-sans), system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: var(--font-poppins), system-ui, -apple-system, Segoe UI, Roboto,
-    Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading), system-ui, sans-serif;
+  letter-spacing: -0.025em; /* Tight tracking for modern feel */
 }
+
+/* --- Utilities --- */
 
 .hero-gradient {
-  background-image:
-    radial-gradient(1000px 500px at -10% -10%, rgba(212, 175, 55, 0.18), rgba(212, 175, 55, 0) 60%),
-    radial-gradient(800px 400px at 110% -10%, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0) 60%),
-    linear-gradient(180deg, #0B1F33 0%, #0B1F33 100%);
-  background-attachment: fixed;
+  background: radial-gradient(circle at 50% 0%, #0f172a 0%, #020617 100%);
+  position: relative;
+}
+
+.hero-gradient::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  background: 
+    radial-gradient(circle at 15% 50%, rgba(212, 175, 55, 0.15), transparent 30%),
+    radial-gradient(circle at 85% 30%, rgba(255, 255, 255, 0.05), transparent 30%);
+  pointer-events: none;
 }
 
 .grid-overlay {
+  background-size: 40px 40px;
   background-image:
-    linear-gradient(rgba(255, 255, 255, 0.06) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.06) 1px, transparent 1px);
-  background-size: 24px 24px, 24px 24px;
-  background-position: center center;
-  opacity: 0.5;
+    linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+  mask-image: linear-gradient(to bottom, black 40%, transparent 100%);
 }
 
-.glass-card {
-  background-color: rgba(255, 255, 255, 0.1);
-  backdrop-filter: saturate(1.2) blur(10px);
-  box-shadow: 0 12px 30px rgba(11, 31, 51, 0.18);
-  border: 1px solid;
-  border-image-slice: 1;
-  border-image-source: linear-gradient(to right, rgba(212, 175, 55, 0.3), rgba(247, 246, 242, 0.3));
+/* Glassmorphism */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(226, 232, 240, 0.8);
+}
+
+.glass-card-dark {
+  background: rgba(15, 23, 42, 0.6); /* Navy Light with opacity */
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.2), 0 2px 4px -1px rgba(0, 0, 0, 0.1);
 }
 
 .text-gradient-gold {
-  background-image: linear-gradient(90deg, #D4AF37 0%, #f1da88 50%, #D4AF37 100%);
+  background: linear-gradient(135deg, #FCD34D 0%, #D4AF37 50%, #B45309 100%);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
-  background-size: 200% 100%;
-  animation: text-gradient-animation 5s ease-in-out infinite;
 }
 
-@keyframes text-gradient-animation {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
-}
-
-.blob-gold {
-  background-image: radial-gradient(closest-side, rgba(212, 175, 55, 0.25), rgba(212, 175, 55, 0));
-  filter: blur(30px);
-  opacity: 0.8;
-  animation: blob-animation 15s infinite;
-}
-
-@keyframes blob-animation {
-  0% {
-    transform: scale(1) translate(0, 0);
-  }
-  50% {
-    transform: scale(1.2) translate(20px, -20px);
-  }
-  100% {
-    transform: scale(1) translate(0, 0);
-  }
-}
-
-@keyframes spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-.bg-conic-gradient {
-  background-image: conic-gradient(from 90deg at 50% 50%, var(--gold), var(--ivory), var(--gold));
-  animation: spin 5s linear infinite;
-}
-
-.glow:hover {
-  box-shadow: 0 0 20px 0 rgba(212, 175, 55, 0.7);
+/* Animations */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
 }
 
 @keyframes fade-in-up {
-  0% {
+  from {
     opacity: 0;
     transform: translateY(20px);
   }
-  100% {
+  to {
     opacity: 1;
     transform: translateY(0);
   }
 }
 
-.animate-fade-in-up {
-  animation: fade-in-up 0.8s ease-out both;
+@keyframes pulse-glow {
+  0%, 100% { opacity: 0.5; }
+  50% { opacity: 0.8; }
 }

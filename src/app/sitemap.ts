@@ -1,4 +1,5 @@
 import type { MetadataRoute } from "next";
+import { posts } from "@/data/posts";
 
 const routes = [
   "",
@@ -15,12 +16,22 @@ const routes = [
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const base = "https://www.laxm.example";
+  const base = "https://www.thelaxm.com";
   const now = new Date();
-  return routes.map((route) => ({
+
+  const staticRoutes = routes.map((route) => ({
     url: `${base}${route}`,
     lastModified: now,
-    changeFrequency: "weekly",
+    changeFrequency: "weekly" as const,
     priority: route === "" ? 1 : 0.7,
   }));
+
+  const blogRoutes = posts.map((post) => ({
+    url: `${base}/blog/${post.slug}`,
+    lastModified: new Date(post.date),
+    changeFrequency: "monthly" as const,
+    priority: 0.6,
+  }));
+
+  return [...staticRoutes, ...blogRoutes];
 }

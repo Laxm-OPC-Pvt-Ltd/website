@@ -17,17 +17,82 @@ export const metadata: Metadata = {
 
 export default function Contact() {
   return (
-    <section className="hero-gradient text-white relative overflow-hidden min-h-screen flex items-center">
-      <div className="absolute inset-0 grid-overlay opacity-30 pointer-events-none" />
-      <div className="mx-auto max-w-4xl px-6 py-24 w-full">
-        <Card variant="glass">
-          <h1 className="text-3xl font-bold text-gradient-gold">Contact</h1>
-          <p className="mt-4 text-gray-200">
-            Reach out to discuss your goals and how we can help.
-          </p>
-          <ContactForm />
-        </Card>
+    <main className="min-h-screen bg-[var(--navy)] relative overflow-hidden">
+      <div className="relative z-10 mx-auto max-w-7xl px-6 py-24 md:py-32">
+        <div className="grid lg:grid-cols-2 gap-16 items-start">
+          {/* Left Column: Context & Info */}
+          <div className="space-y-8 fade-in-up">
+            <div>
+              <h2 className="text-[var(--gold)] font-semibold tracking-wider uppercase mb-4 text-sm">
+                Get in Touch
+              </h2>
+              <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight">
+                Let's Build <br />
+                <span className="text-gradient-gold">Something Great.</span>
+              </h1>
+              <p className="text-lg text-gray-300 leading-relaxed max-w-lg">
+                Whether you're looking to accelerate your AI initiatives,
+                optimize your operations, or build a custom solution, we're here
+                to help you achieve your vision.
+              </p>
+            </div>
+
+            <div className="space-y-6 pt-8 border-t border-white/10">
+              <div className="flex items-start gap-4">
+                <div className="p-3 rounded-full bg-white/5 text-[var(--gold)]">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="h-6 w-6"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={1.5}
+                      d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+                    />
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={1.5}
+                      d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+                    />
+                  </svg>
+                </div>
+                <div>
+                  <h3 className="text-white font-semibold text-lg">
+                    Global HQ
+                  </h3>
+                  <p className="text-gray-400 mt-1">
+                    WeWork, Nanakramguda, Financial District
+                  </p>
+                  <p className="text-gray-400 mt-1">
+                    Hyderabad, Bharat. 500032
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Right Column: Form */}
+          <div className="fade-in-up delay-100">
+            <Card
+              variant="glass-dark"
+              className="border-white/10 shadow-2xl shadow-black/30 backdrop-blur-xl"
+            >
+              <h3 className="text-2xl font-bold text-white mb-2">
+                Send us a message
+              </h3>
+              <p className="text-sm text-gray-400 mb-6">
+                We usually respond within 24 hours.
+              </p>
+              <ContactForm />
+            </Card>
+          </div>
+        </div>
       </div>
-    </section>
+    </main>
   );
 }

@@ -11,92 +11,92 @@ export default function ContactForm() {
       method="POST"
       acceptCharset="UTF-8"
       encType="multipart/form-data"
-      className="mt-8 space-y-6"
+      className="space-y-5"
     >
       <input type="hidden" name="zf_referrer_name" value="" />
       <input type="hidden" name="zf_redirect_url" value="" />
       <input type="hidden" name="zc_gad" value="" />
 
-      <div className="grid gap-6 md:grid-cols-2">
+      <div className="grid gap-5 md:grid-cols-2">
         {/* Contact Person */}
-        <div className="space-y-2">
-          <label className="block text-sm font-medium text-gray-200">
-            First Name <span className="text-gold">*</span>
+        <div className="space-y-1.5">
+          <label className="block text-xs font-medium text-gray-300 uppercase tracking-wide">
+            First Name <span className="text-[var(--gold)]">*</span>
           </label>
           <input
             type="text"
             maxLength={255}
             name="Name_First"
-            placeholder="First Name"
-            className="w-full rounded-md border border-white/20 bg-white/5 p-3 text-white placeholder-gray-400 backdrop-blur-sm transition-colors focus:border-gold focus:outline-none focus:ring-1 focus:ring-gold"
+            placeholder="John"
+            className="w-full rounded-lg border border-white/10 bg-black/20 p-3 text-white placeholder-white/20 backdrop-blur-sm transition-all focus:border-[var(--gold)] focus:bg-black/40 focus:outline-none focus:ring-1 focus:ring-[var(--gold)]"
             required
           />
         </div>
-        <div className="space-y-2">
-          <label className="block text-sm font-medium text-gray-200">
-            Last Name <span className="text-gold">*</span>
+        <div className="space-y-1.5">
+          <label className="block text-xs font-medium text-gray-300 uppercase tracking-wide">
+            Last Name <span className="text-[var(--gold)]">*</span>
           </label>
           <input
             type="text"
             maxLength={255}
             name="Name_Last"
-            placeholder="Last Name"
-            className="w-full rounded-md border border-white/20 bg-white/5 p-3 text-white placeholder-gray-400 backdrop-blur-sm transition-colors focus:border-gold focus:outline-none focus:ring-1 focus:ring-gold"
+            placeholder="Doe"
+            className="w-full rounded-lg border border-white/10 bg-black/20 p-3 text-white placeholder-white/20 backdrop-blur-sm transition-all focus:border-[var(--gold)] focus:bg-black/40 focus:outline-none focus:ring-1 focus:ring-[var(--gold)]"
             required
           />
         </div>
       </div>
 
-      <div className="grid gap-6 md:grid-cols-2">
+      <div className="grid gap-5 md:grid-cols-2">
         {/* Company Name */}
-        <div className="space-y-2">
-          <label className="block text-sm font-medium text-gray-200">
-            Company Name <span className="text-gold">*</span>
+        <div className="space-y-1.5">
+          <label className="block text-xs font-medium text-gray-300 uppercase tracking-wide">
+            Company <span className="text-[var(--gold)]">*</span>
           </label>
           <input
             type="text"
             name="SingleLine"
             maxLength={255}
             placeholder="Your Company"
-            className="w-full rounded-md border border-white/20 bg-white/5 p-3 text-white placeholder-gray-400 backdrop-blur-sm transition-colors focus:border-gold focus:outline-none focus:ring-1 focus:ring-gold"
+            className="w-full rounded-lg border border-white/10 bg-black/20 p-3 text-white placeholder-white/20 backdrop-blur-sm transition-all focus:border-[var(--gold)] focus:bg-black/40 focus:outline-none focus:ring-1 focus:ring-[var(--gold)]"
             required
           />
         </div>
 
         {/* Email */}
-        <div className="space-y-2">
-          <label className="block text-sm font-medium text-gray-200">
-            Email <span className="text-gold">*</span>
+        <div className="space-y-1.5">
+          <label className="block text-xs font-medium text-gray-300 uppercase tracking-wide">
+            Email <span className="text-[var(--gold)]">*</span>
           </label>
           <input
             type="email"
             maxLength={255}
             name="Email"
             placeholder="john@example.com"
-            className="w-full rounded-md border border-white/20 bg-white/5 p-3 text-white placeholder-gray-400 backdrop-blur-sm transition-colors focus:border-gold focus:outline-none focus:ring-1 focus:ring-gold"
+            className="w-full rounded-lg border border-white/10 bg-black/20 p-3 text-white placeholder-white/20 backdrop-blur-sm transition-all focus:border-[var(--gold)] focus:bg-black/40 focus:outline-none focus:ring-1 focus:ring-[var(--gold)]"
             required
           />
         </div>
       </div>
 
-      <div className="grid gap-6 md:grid-cols-2">
+      <div className="grid gap-5 md:grid-cols-2">
         {/* Employee Count */}
-        <div className="space-y-2">
-          <label className="block text-sm font-medium text-gray-200">
-            Employee Count
+        <div className="space-y-1.5">
+          <label className="block text-xs font-medium text-gray-300 uppercase tracking-wide">
+            Employees
           </label>
           <input
             type="text"
             name="Number1"
             maxLength={18}
             placeholder="e.g. 50"
-            className="w-full rounded-md border border-white/20 bg-white/5 p-3 text-white placeholder-gray-400 backdrop-blur-sm transition-colors focus:border-gold focus:outline-none focus:ring-1 focus:ring-gold"
+            className="w-full rounded-lg border border-white/10 bg-black/20 p-3 text-white placeholder-white/20 backdrop-blur-sm transition-all focus:border-[var(--gold)] focus:bg-black/40 focus:outline-none focus:ring-1 focus:ring-[var(--gold)]"
           />
         </div>
 
         {/* Website */}
-        <div className="space-y-2">
-          <label className="block text-sm font-medium text-gray-200">
+        <div className="space-y-1.5">
+          <label className="block text-xs font-medium text-gray-300 uppercase tracking-wide">
             Website
           </label>
           <input
@@ -104,19 +104,19 @@ export default function ContactForm() {
             maxLength={2083}
             name="Website"
             placeholder="https://example.com"
-            className="w-full rounded-md border border-white/20 bg-white/5 p-3 text-white placeholder-gray-400 backdrop-blur-sm transition-colors focus:border-gold focus:outline-none focus:ring-1 focus:ring-gold"
+            className="w-full rounded-lg border border-white/10 bg-black/20 p-3 text-white placeholder-white/20 backdrop-blur-sm transition-all focus:border-[var(--gold)] focus:bg-black/40 focus:outline-none focus:ring-1 focus:ring-[var(--gold)]"
           />
         </div>
       </div>
 
       {/* Country Dropdown */}
-      <div className="space-y-2">
-        <label className="block text-sm font-medium text-gray-200">
+      <div className="space-y-1.5">
+        <label className="block text-xs font-medium text-gray-300 uppercase tracking-wide">
           Country
         </label>
         <select
           name="Dropdown"
-          className="w-full rounded-md border border-white/20 bg-white/5 p-3 text-white placeholder-gray-400 backdrop-blur-sm transition-colors focus:border-gold focus:outline-none focus:ring-1 focus:ring-gold [&>option]:bg-zinc-900"
+          className="w-full rounded-lg border border-white/10 bg-black/20 p-3 text-white placeholder-white/20 backdrop-blur-sm transition-all focus:border-[var(--gold)] focus:bg-black/40 focus:outline-none focus:ring-1 focus:ring-[var(--gold)] [&>option]:bg-[var(--navy)]"
         >
           <option value="-Select-">-Select-</option>
           <option value="Åland Islands">Åland Islands</option>
@@ -185,7 +185,7 @@ export default function ContactForm() {
           <option value="Cook Islands">Cook Islands</option>
           <option value="Coral Sea Islands">Coral Sea Islands</option>
           <option value="Costa Rica">Costa Rica</option>
-          <option value="Cote D&apos;Ivoire">Cote D&apos;Ivoire</option>
+          <option value="Cote D'Ivoire">Cote D&apos;Ivoire</option>
           <option value="Croatia">Croatia</option>
           <option value="Cuba">Cuba</option>
           <option value="Curaçao">Curaçao</option>
@@ -422,41 +422,44 @@ export default function ContactForm() {
 
       {/* Terms and Conditions */}
       <div className="space-y-4 pt-4 border-t border-white/10">
-        <div className="text-sm text-gray-300">
-          Laxm OPC{" "}
+        <div className="text-xs text-gray-400">
+          By submitting this form, you agree to our{" "}
           <a
             target="_blank"
             href="#"
             rel="noopener noreferrer"
-            className="text-gold hover:underline"
+            className="text-[var(--gold)] hover:underline"
           >
-            Terms and Conditions
+            Terms
           </a>{" "}
           and{" "}
           <a
             target="_blank"
             href="#"
             rel="noopener noreferrer"
-            className="text-gold hover:underline"
+            className="text-[var(--gold)] hover:underline"
           >
             Privacy Policy
           </a>
+          .
         </div>
         <div className="flex items-center gap-3">
           <input
-            className="h-4 w-4 rounded border-gray-300 text-gold focus:ring-gold"
+            className="h-4 w-4 rounded border-white/20 bg-black/20 text-[var(--gold)] focus:ring-[var(--gold)]"
             name="TermsConditions"
             type="checkbox"
             required
           />
-          <label className="text-sm text-gray-200">
+          <label className="text-xs text-gray-300">
             I accept the Terms and Conditions.
           </label>
         </div>
       </div>
 
       <div className="flex justify-start">
-        <CTAButton type="submit">Submit Inquiry</CTAButton>
+        <CTAButton type="submit" className="w-full justify-center">
+          Send Message
+        </CTAButton>
       </div>
     </form>
   );
