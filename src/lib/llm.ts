@@ -3,8 +3,7 @@ import { searchFAQs } from "@/data/faqs";
 
 // Initialize OpenAI client - uses OPENAI_API_KEY environment variable
 const openai = new OpenAI({
-  apiKey:
-    "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",
+  apiKey: process.env.OPENAI_API_KEY,
 });
 
 export interface LLMResponse {
@@ -30,10 +29,10 @@ export async function queryLLMWithContext(userQuery: string, options: LLMQueryOp
     // Search relevant FAQs based on the query
     let context = "";
     let sources: string[] = [];
-    let relevantFAQs = [];
+    const relevantFAQs = includeContext ? searchFAQs(userQuery) : [];
 
     if (includeContext) {
-      relevantFAQs = searchFAQs(userQuery);
+      const relevantFAQs = searchFAQs(userQuery);
       sources = relevantFAQs.map((faq) => `Q: ${faq.question}`);
 
       if (relevantFAQs.length > 0) {
