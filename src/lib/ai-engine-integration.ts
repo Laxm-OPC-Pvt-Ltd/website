@@ -135,12 +135,19 @@ async function completeAIWorkflow() {
 
   // Step 1: Initialize knowledge base (do this once on startup)
   console.log("\n📚 Step 1: Building knowledge base...");
-  const { faqs, categories } = await fetchFAQKnowledgeBase();
+  const faqPayload = await fetchFAQKnowledgeBase();
+  if (!faqPayload) {
+    throw new Error("Unable to load FAQ knowledge base");
+  }
+  const { faqs, categories } = faqPayload;
   console.log(`✅ Loaded ${faqs.length} FAQs in ${categories.length} categories`);
 
   // Step 2: Fetch website content for indexing
   console.log("\n📄 Step 2: Fetching website content...");
   const content = await fetchWebsiteContent("all");
+  if (!content) {
+    throw new Error("Unable to fetch website content");
+  }
   console.log("✅ Website content fetched");
 
   // Step 3: Example user question

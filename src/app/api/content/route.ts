@@ -62,7 +62,11 @@ export async function GET(request: NextRequest) {
     const searchParams = request.nextUrl.searchParams;
     const type = searchParams.get("type") || "all";
 
-    let data = websiteContent;
+    let data: {
+      company?: typeof websiteContent.company;
+      services?: typeof websiteContent.services;
+      pages?: typeof websiteContent.pages;
+    } = websiteContent;
 
     if (type === "company") {
       data = { company: websiteContent.company };
