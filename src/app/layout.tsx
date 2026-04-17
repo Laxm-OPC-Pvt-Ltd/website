@@ -71,7 +71,12 @@ const jsonLd = {
   name: "Laxm (OPC) Private Limited",
   alternateName: ["Laxm", "Lakshyam"],
   url: "https://www.thelaxm.com",
-  logo: "https://www.thelaxm.com/laxm_logo.png",
+  logo: {
+    "@type": "ImageObject",
+    url: "https://www.thelaxm.com/laxm_logo.png",
+    width: 512,
+    height: 512,
+  },
   description:
     "Laxm is a strategy, advisory, and technology consulting firm focused on turning ideas into execution. We help organizations define clear aims (Lakshyam), build practical strategies, and deliver measurable outcomes.",
   sameAs: [
@@ -105,6 +110,24 @@ const jsonLd = {
   },
 };
 
+const websiteJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": "https://www.thelaxm.com/#website",
+  name: "Laxm",
+  url: "https://www.thelaxm.com",
+  publisher: { "@id": "https://www.thelaxm.com/#organization" },
+  potentialAction: {
+    "@type": "SearchAction",
+    target: {
+      "@type": "EntryPoint",
+      urlTemplate: "https://www.thelaxm.com/api/faqs/search?q={search_term_string}",
+    },
+    "query-input": "required name=search_term_string",
+  },
+  inLanguage: "en-US",
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -128,6 +151,10 @@ export default function RootLayout({
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }}
         />
       </head>
       <body

@@ -1,7 +1,10 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
+import Script from "next/script";
 import { posts } from "@/data/posts";
+
+const BASE_URL = "https://www.thelaxm.com";
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -14,14 +17,27 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const post = posts.find((p) => p.slug === slug);
   if (!post) return {};
   return {
-    title: `${post.title} - Laxm Healthcare Blog`,
+    title: `${post.title} - Laxm Blog`,
     description: post.excerpt,
     keywords: [post.category, ...(post.tags || [])],
+    authors: [{ name: post.author, url: BASE_URL }],
+    alternates: {
+      canonical: `${BASE_URL}/blog/${post.slug}`,
+    },
     openGraph: {
       title: post.title,
       description: post.excerpt,
       type: "article",
+      url: `${BASE_URL}/blog/${post.slug}`,
+      siteName: "Laxm",
       publishedTime: post.date,
+      authors: [post.author],
+      tags: post.tags,
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: post.title,
+      description: post.excerpt,
     },
   };
 }
@@ -35,7 +51,69 @@ export default async function PostPage({ params }: Props) {
     .filter((p) => p.category === post.category && p.slug !== post.slug)
     .slice(0, 3);
 
+  const articleJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "@id": `${BASE_URL}/blog/${post.slug}#article`,
+    headline: post.title,
+    description: post.excerpt,
+    datePublished: post.date,
+    dateModified: post.date,
+    url: `${BASE_URL}/blog/${post.slug}`,
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": `${BASE_URL}/blog/${post.slug}`,
+    },
+    author: {
+      "@type": "Organization",
+      "@id": `${BASE_URL}/#organization`,
+      name: "Laxm (OPC) Private Limited",
+      url: BASE_URL,
+    },
+    publisher: {
+      "@type": "Organization",
+      "@id": `${BASE_URL}/#organization`,
+      name: "Laxm (OPC) Private Limited",
+      url: BASE_URL,
+      logo: {
+        "@type": "ImageObject",
+        url: `${BASE_URL}/laxm_logo.png`,
+      },
+    },
+    keywords: post.tags?.join(", "),
+    articleSection: post.category,
+    timeRequired: `PT${post.readingTime}M`,
+    inLanguage: "en-US",
+    isPartOf: {
+      "@type": "Blog",
+      "@id": `${BASE_URL}/blog`,
+      name: "Laxm Healthcare Technology Blog",
+      url: `${BASE_URL}/blog`,
+    },
+  };
+
+  const breadcrumbJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: BASE_URL },
+      { "@type": "ListItem", position: 2, name: "Blog", item: `${BASE_URL}/blog` },
+      { "@type": "ListItem", position: 3, name: post.title, item: `${BASE_URL}/blog/${post.slug}` },
+    ],
+  };
+
   return (
+    <>
+      <Script
+        id="article-jsonld"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }}
+      />
+      <Script
+        id="breadcrumb-jsonld"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+      />
     <main className="min-h-screen bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950">
       {/* Hero Header */}
       <section className="relative overflow-hidden pt-24 pb-12 px-6 border-b border-slate-700">
@@ -183,5 +261,6 @@ export default async function PostPage({ params }: Props) {
         </section>
       )}
     </main>
+    </>
   );
 }

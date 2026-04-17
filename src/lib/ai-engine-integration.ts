@@ -11,7 +11,7 @@
  * Fetch all FAQs to build your AI's knowledge base
  */
 async function fetchFAQKnowledgeBase() {
-  const baseUrl = "https://yoursite.com"; // Replace with actual domain
+  const baseUrl = "https://www.thelaxm.com";
 
   try {
     const response = await fetch(`${baseUrl}/api/faqs?limit=100`);
@@ -35,12 +35,10 @@ async function fetchFAQKnowledgeBase() {
  * Search FAQs to find relevant context before querying AI
  */
 async function searchRelevantFAQs(query: string) {
-  const baseUrl = "https://yoursite.com";
+  const baseUrl = "https://www.thelaxm.com";
 
   try {
-    const response = await fetch(
-      `${baseUrl}/api/faqs/search?q=${encodeURIComponent(query)}`
-    );
+    const response = await fetch(`${baseUrl}/api/faqs/search?q=${encodeURIComponent(query)}`);
     const { results } = await response.json();
 
     console.log(`Found ${results.length} relevant FAQs for: "${query}"`);
@@ -60,7 +58,7 @@ async function searchRelevantFAQs(query: string) {
  * The AI will automatically include relevant FAQ context
  */
 async function queryWebsiteAI(userQuery: string) {
-  const baseUrl = "https://yoursite.com";
+  const baseUrl = "https://www.thelaxm.com";
 
   try {
     const response = await fetch(`${baseUrl}/api/ai/query`, {
@@ -97,7 +95,7 @@ async function queryWebsiteAI(userQuery: string) {
  * Fetch structured website content for indexing in your AI system
  */
 async function fetchWebsiteContent(contentType = "all") {
-  const baseUrl = "https://yoursite.com";
+  const baseUrl = "https://www.thelaxm.com";
   const types = ["all", "company", "services", "pages"];
 
   if (!types.includes(contentType)) {
@@ -106,9 +104,7 @@ async function fetchWebsiteContent(contentType = "all") {
   }
 
   try {
-    const response = await fetch(
-      `${baseUrl}/api/content?type=${contentType}`
-    );
+    const response = await fetch(`${baseUrl}/api/content?type=${contentType}`);
     const { data } = await response.json();
 
     console.log(`Fetched ${contentType} content:`, data);
@@ -157,9 +153,7 @@ async function completeAIWorkflow() {
   // Step 4: Search for relevant FAQs first
   console.log("\n🔍 Step 3: Searching for relevant FAQs...");
   const relevantFAQs = await searchRelevantFAQs(userQuestion);
-  console.log(
-    `✅ Found ${relevantFAQs.length} relevant FAQs`
-  );
+  console.log(`✅ Found ${relevantFAQs.length} relevant FAQs`);
 
   // Step 5: Query the AI
   console.log("\n🤖 Step 4: Querying AI engine...");
@@ -172,9 +166,7 @@ async function completeAIWorkflow() {
     aiResponse.sources.forEach((source: string) => console.log(`  - ${source}`));
   }
 
-  console.log(
-    `\n🎯 Confidence Score: ${(aiResponse.confidence * 100).toFixed(0)}%`
-  );
+  console.log(`\n🎯 Confidence Score: ${(aiResponse.confidence * 100).toFixed(0)}%`);
 }
 
 // ============================================================================
@@ -191,7 +183,7 @@ async function batchProcessQuestions(questions: string[]) {
     console.log(`\nProcessing: "${question}"`);
 
     try {
-      const response = await fetch("https://yoursite.com/api/ai/query", {
+      const response = await fetch("https://www.thelaxm.com/api/ai/query", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -249,7 +241,7 @@ class FAQCache {
 
     // Fetch and cache
     console.log("🌐 Fetching fresh FAQs from API");
-    const response = await fetch("https://yoursite.com/api/faqs?limit=100");
+    const response = await fetch("https://www.thelaxm.com/api/faqs?limit=100");
     const data = await response.json();
 
     this.cache.set(cacheKey, {
@@ -273,23 +265,18 @@ class FAQCache {
 /**
  * Robust error handling for API calls
  */
-async function queryWithRetry(
-  query: string,
-  maxRetries = 3
-): Promise<any> {
+async function queryWithRetry(query: string, maxRetries = 3): Promise<any> {
   for (let attempt = 1; attempt <= maxRetries; attempt++) {
     try {
       console.log(`Attempt ${attempt}/${maxRetries}...`);
-      const response = await fetch("https://yoursite.com/api/ai/query", {
+      const response = await fetch("https://www.thelaxm.com/api/ai/query", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ query, includeContext: true }),
       });
 
       if (!response.ok) {
-        throw new Error(
-          `HTTP ${response.status}: ${response.statusText}`
-        );
+        throw new Error(`HTTP ${response.status}: ${response.statusText}`);
       }
 
       return await response.json();
