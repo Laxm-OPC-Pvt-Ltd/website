@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { canonicalUrl } from "@/lib/metadata";
 
 export const metadata: Metadata = {
   title: "Privacy Policy",
@@ -10,6 +11,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     images: ["/laxm_logo.png"],
+  },
+  alternates: {
+    canonical: canonicalUrl("/privacy-policy"),
   },
 };
 

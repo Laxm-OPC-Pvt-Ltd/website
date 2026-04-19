@@ -3,8 +3,7 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import Script from "next/script";
 import { posts } from "@/data/posts";
-
-const BASE_URL = "https://www.thelaxm.com";
+import { BASE_URL, canonicalUrl } from "@/lib/metadata";
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -22,7 +21,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     keywords: [post.category, ...(post.tags || [])],
     authors: [{ name: post.author, url: BASE_URL }],
     alternates: {
-      canonical: `${BASE_URL}/blog/${post.slug}`,
+      canonical: canonicalUrl(`/blog/${post.slug}`),
     },
     openGraph: {
       title: post.title,
@@ -87,7 +86,7 @@ export default async function PostPage({ params }: Props) {
     isPartOf: {
       "@type": "Blog",
       "@id": `${BASE_URL}/blog`,
-      name: "Laxm Healthcare Technology Blog",
+      name: "Laxm Blog",
       url: `${BASE_URL}/blog`,
     },
   };
@@ -204,6 +203,29 @@ export default async function PostPage({ params }: Props) {
                   </span>
                 ))}
               </div>
+            </div>
+          )}
+
+          {post.references && post.references.length > 0 && (
+            <div className="mt-10 pt-8 border-t border-slate-700">
+              <p className="text-sm text-gray-400 mb-4 font-semibold">References</p>
+              <ul className="space-y-3 text-sm text-gray-300">
+                {post.references.map((reference) => (
+                  <li key={reference.url}>
+                    <a
+                      href={reference.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-[var(--gold)] hover:text-yellow-300 underline"
+                    >
+                      <cite>{reference.label}</cite>
+                    </a>
+                    {reference.date ? (
+                      <span className="text-gray-500"> • {reference.date}</span>
+                    ) : null}
+                  </li>
+                ))}
+              </ul>
             </div>
           )}
         </div>

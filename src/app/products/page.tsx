@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { canonicalUrl } from "@/lib/metadata";
 import Card from "@/components/Card";
 import CTAButton from "@/components/CTAButton";
 
@@ -12,6 +13,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     images: ["/laxm_logo.png"],
+  },
+  alternates: {
+    canonical: canonicalUrl("/products"),
   },
 };
 

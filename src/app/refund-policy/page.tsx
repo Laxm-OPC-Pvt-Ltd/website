@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { canonicalUrl } from "@/lib/metadata";
 
 export const metadata: Metadata = {
   title: "Refund Policy",
@@ -7,6 +8,9 @@ export const metadata: Metadata = {
   keywords: ["Refund Policy", "Free Trial", "Refunds", "Payments", "Laxm"],
   openGraph: { images: [{ url: "/laxm_logo.png", width: 1200, height: 630 }] },
   twitter: { images: ["/laxm_logo.png"] },
+  alternates: {
+    canonical: canonicalUrl("/refund-policy"),
+  },
 };
 
 export default function RefundPolicy() {

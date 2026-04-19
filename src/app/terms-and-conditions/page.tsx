@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { canonicalUrl } from "@/lib/metadata";
 
 export const metadata: Metadata = {
   title: "Terms and Conditions",
@@ -13,6 +14,9 @@ export const metadata: Metadata = {
   ],
   openGraph: { images: [{ url: "/laxm_logo.png", width: 1200, height: 630 }] },
   twitter: { images: ["/laxm_logo.png"] },
+  alternates: {
+    canonical: canonicalUrl("/terms-and-conditions"),
+  },
 };
 
 export default function TermsAndConditions() {

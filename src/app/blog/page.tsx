@@ -1,9 +1,10 @@
 import Link from "next/link";
 import { posts } from "@/data/posts";
 import type { Metadata } from "next";
+import { canonicalUrl } from "@/lib/metadata";
 
 export const metadata: Metadata = {
-  title: "Healthcare Blog - Laxm",
+  title: "Blog - Laxm",
   description:
     "Expert insights on digital transformation, AI/ML, healthcare technology, and operational excellence.",
   keywords: [
@@ -14,6 +15,9 @@ export const metadata: Metadata = {
     "EHR",
     "patient experience",
   ],
+  alternates: {
+    canonical: canonicalUrl("/blog"),
+  },
 };
 
 export default function BlogIndex() {

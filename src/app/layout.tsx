@@ -5,6 +5,7 @@ import "./globals.css";
 import Link from "next/link";
 import Logo from "@/components/Logo";
 import LinkedInIcon from "@/components/icons/LinkedIn";
+import { canonicalUrl } from "@/lib/metadata";
 
 const poppins = Poppins({
   variable: "--font-poppins",
@@ -45,6 +46,9 @@ export const metadata: Metadata = {
     siteName: "Laxm",
     locale: "en_US",
     type: "website",
+  },
+  alternates: {
+    canonical: canonicalUrl("/"),
   },
   twitter: {
     card: "summary_large_image",

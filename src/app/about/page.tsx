@@ -1,11 +1,15 @@
 import Card from "@/components/Card";
 import type { Metadata } from "next";
+import { canonicalUrl } from "@/lib/metadata";
 
 export const metadata: Metadata = {
   title: "About",
   description:
-    "Learn about Laxm’s mission: premium, direction-driven, and value-focused technology advisory and innovation.",
+    "Learn about Laxm's mission: premium, direction-driven, and value-focused technology advisory and innovation.",
   keywords: ["Laxm", "About", "Advisory", "IT Consulting", "Innovation"],
+  alternates: {
+    canonical: canonicalUrl("/about"),
+  },
   openGraph: {
     images: [{ url: "/laxm_logo.png", width: 1200, height: 630 }],
   },

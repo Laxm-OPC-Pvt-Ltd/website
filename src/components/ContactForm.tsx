@@ -426,7 +426,7 @@ export default function ContactForm() {
           By submitting this form, you agree to our{" "}
           <a
             target="_blank"
-            href="#"
+            href="/terms-of-service"
             rel="noopener noreferrer"
             className="text-[var(--gold)] hover:underline"
           >
@@ -435,7 +435,7 @@ export default function ContactForm() {
           and{" "}
           <a
             target="_blank"
-            href="#"
+            href="/privacy-policy"
             rel="noopener noreferrer"
             className="text-[var(--gold)] hover:underline"
           >

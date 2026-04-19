@@ -1,8 +1,12 @@
 import AIChat from "@/components/AIChat";
+import { canonicalUrl } from "@/lib/metadata";
 
 export const metadata = {
   title: "AI Assistant - Laxm",
   description: "Chat with our AI assistant to learn more about Laxm and our services",
+  alternates: {
+    canonical: canonicalUrl("/ai-assistant"),
+  },
 };
 
 export default function AIChatPage() {
