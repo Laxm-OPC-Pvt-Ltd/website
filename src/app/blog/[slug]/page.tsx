@@ -79,9 +79,10 @@ export default async function PostPage({ params }: Props) {
         url: `${BASE_URL}/laxm_logo.png`,
       },
     },
-    keywords: post.tags?.join(", "),
-    articleSection: post.category,
-    timeRequired: `PT${post.readingTime}M`,
+     keywords: post.tags?.join(", "),
+     articleSection: post.category,
+     citation: post.references?.map((r) => r.url),
+     timeRequired: `PT${post.readingTime}M`,
     inLanguage: "en-US",
     isPartOf: {
       "@type": "Blog",
@@ -211,15 +212,16 @@ export default async function PostPage({ params }: Props) {
               <p className="text-sm text-gray-400 mb-4 font-semibold">References</p>
               <ul className="space-y-3 text-sm text-gray-300">
                 {post.references.map((reference) => (
-                  <li key={reference.url}>
-                    <a
-                      href={reference.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-[var(--gold)] hover:text-yellow-300 underline"
-                    >
-                      <cite>{reference.label}</cite>
-                    </a>
+                 <li key={reference.url}>
+                     <a
+                       href={reference.url}
+                       target="_blank"
+                       rel="noopener noreferrer"
+                       data-source={reference.url}
+                       className="text-[var(--gold)] hover:text-yellow-300 underline"
+                     >
+                       <cite>{reference.label}</cite>
+                     </a>
                     {reference.date ? (
                       <span className="text-gray-500"> • {reference.date}</span>
                     ) : null}

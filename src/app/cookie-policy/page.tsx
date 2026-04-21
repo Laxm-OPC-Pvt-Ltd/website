@@ -20,8 +20,10 @@ export const metadata: Metadata = {
 export default function CookiePolicy() {
   return (
     <section className="mx-auto max-w-4xl px-6 py-16">
-      <h1 className="text-3xl font-bold">Cookie Policy</h1>
-      <p className="mt-4 text-zinc-700">Effective date: 21 Dec 2025</p>
+       <h1 className="text-3xl font-bold">Cookie Policy</h1>
+       <p className="mt-4 text-zinc-700">
+         Effective date: <time dateTime="2025-12-21">21 Dec 2025</time>
+       </p>
       <p className="mt-4 text-zinc-700">
         This Cookie Policy explains how Laxm (OPC) Private Limited (“Laxm”,
         “we”) uses cookies and similar technologies on our website.

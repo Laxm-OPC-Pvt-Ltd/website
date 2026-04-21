@@ -22,8 +22,10 @@ export const metadata: Metadata = {
 export default function TermsAndConditions() {
   return (
     <section className="mx-auto max-w-4xl px-6 py-16">
-      <h1 className="text-3xl font-bold">Terms and Conditions</h1>
-      <p className="mt-4 text-zinc-700">Effective date: 21 Dec 2025</p>
+       <h1 className="text-3xl font-bold">Terms and Conditions</h1>
+       <p className="mt-4 text-zinc-700">
+         Effective date: <time dateTime="2025-12-21">21 Dec 2025</time>
+       </p>
       <p className="mt-4 text-zinc-700">
         These Terms and Conditions (“Terms”) apply to use of our website and
         purchase or subscription to our technology products and services
@@ -100,24 +102,43 @@ export default function TermsAndConditions() {
         or consequential damages, including loss of profits, data, or business
         interruption.
       </p>
-      <h2 className="mt-8 text-xl font-semibold">Governing Law</h2>
-      <p className="mt-2 text-zinc-700">
-        These Terms are governed by the laws of India. Courts in Hyderabad,
-        Telangana, India have exclusive jurisdiction.
-      </p>
+       <h2 className="mt-8 text-xl font-semibold">Governing Law</h2>
+       <p className="mt-2 text-zinc-700">
+         These Terms are governed by the laws of <cite><a href="https://www.indiacode.nic.in/" target="_blank" rel="noopener" data-source="https://www.indiacode.nic.in/">India</a></cite>. Courts in Hyderabad,
+         Telangana, India have exclusive jurisdiction.
+       </p>
       <h2 className="mt-8 text-xl font-semibold">Changes</h2>
       <p className="mt-2 text-zinc-700">
         We may update these Terms with a revised effective date. Continued use
         indicates acceptance.
       </p>
-      <h2 className="mt-8 text-xl font-semibold">Contact</h2>
-      <p className="mt-2 text-zinc-700">
-        For questions, contact{" "}
-        <a className="underline" href="mailto:ask@thelaxm.com">
-          ask@thelaxm.com
-        </a>
-        .
-      </p>
-    </section>
+       <h2 className="mt-8 text-xl font-semibold">Contact</h2>
+       <p className="mt-2 text-zinc-700">
+         For questions, contact{" "}
+         <a className="underline" href="mailto:ask@thelaxm.com">
+           ask@thelaxm.com
+         </a>
+         .
+       </p>
+
+       {/* References Section */}
+       <h2 className="mt-12 text-xl font-semibold">References</h2>
+       <ul className="mt-2 list-disc pl-6 text-zinc-700">
+         <li>
+           Information Technology Act, 2000 and rules made thereunder.{" "}
+           <cite>
+             <a
+               href="https://www.indiacode.nic.in/"
+               target="_blank"
+               rel="noopener"
+               data-source="https://www.indiacode.nic.in/"
+             >
+               India Code (official government portal)
+             </a>
+           </cite>
+           .
+         </li>
+       </ul>
+     </section>
   );
 }

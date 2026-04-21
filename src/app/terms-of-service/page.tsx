@@ -20,8 +20,8 @@ export const metadata: Metadata = {
 export default function TermsOfService() {
   return (
     <section className="mx-auto max-w-4xl px-6 py-16">
-      <h1 className="text-3xl font-bold">Terms of Service</h1>
-      <p className="mt-4 text-zinc-700">Effective date: 21 Dec 2025</p>
+       <h1 className="text-3xl font-bold">Terms of Service</h1>
+       <p className="mt-4 text-zinc-700">Effective date: <time dateTime="2025-12-21">21 Dec 2025</time></p>
       <p className="mt-4 text-zinc-700">
         These Terms govern your use of the website operated by Laxm (OPC)
         Private Limited (“Laxm”, “we”, “our”, “us”). By accessing or using the
@@ -87,26 +87,45 @@ export default function TermsOfService() {
         without notice, for conduct that we believe violates the law or is
         harmful.
       </p>
-      <h2 className="mt-8 text-xl font-semibold">Governing Law</h2>
-      <p className="mt-2 text-zinc-700">
-        These Terms are governed by the laws of India. You agree that the courts
-        located in Hyderabad, Telangana, India shall have exclusive jurisdiction
-        over any disputes.
-      </p>
+       <h2 className="mt-8 text-xl font-semibold">Governing Law</h2>
+       <p className="mt-2 text-zinc-700">
+         These Terms are governed by the laws of <cite><a href="https://www.indiacode.nic.in/" target="_blank" rel="noopener" data-source="https://www.indiacode.nic.in/">India</a></cite>. You agree that the courts
+         located in Hyderabad, Telangana, India shall have exclusive jurisdiction
+         over any disputes.
+       </p>
       <h2 className="mt-8 text-xl font-semibold">Changes to These Terms</h2>
       <p className="mt-2 text-zinc-700">
         We may update these Terms from time to time. Material changes will be
         indicated with a revised effective date. Continued use of the site
         signifies acceptance of the updated Terms.
       </p>
-      <h2 className="mt-8 text-xl font-semibold">Contact</h2>
-      <p className="mt-2 text-zinc-700">
-        For questions regarding these Terms, contact{" "}
-        <a className="underline" href="mailto:ask@thelaxm.com">
-          ask@thelaxm.com
-        </a>
-        .
-      </p>
-    </section>
+       <h2 className="mt-8 text-xl font-semibold">Contact</h2>
+       <p className="mt-2 text-zinc-700">
+         For questions regarding these Terms, contact{" "}
+         <a className="underline" href="mailto:ask@thelaxm.com">
+           ask@thelaxm.com
+         </a>
+         .
+       </p>
+
+       {/* References Section */}
+       <h2 className="mt-12 text-xl font-semibold">References</h2>
+       <ul className="mt-2 list-disc pl-6 text-zinc-700">
+         <li>
+           Information Technology Act, 2000 and rules made thereunder.{" "}
+           <cite>
+             <a
+               href="https://www.indiacode.nic.in/"
+               target="_blank"
+               rel="noopener"
+               data-source="https://www.indiacode.nic.in/"
+             >
+               India Code (official government portal)
+             </a>
+           </cite>
+           .
+         </li>
+       </ul>
+     </section>
   );
 }

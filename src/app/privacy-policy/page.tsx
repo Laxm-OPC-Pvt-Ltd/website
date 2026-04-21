@@ -20,15 +20,17 @@ export const metadata: Metadata = {
 export default function PrivacyPolicy() {
   return (
     <section className="mx-auto max-w-4xl px-6 py-16">
-      <h1 className="text-3xl font-bold">Privacy Policy</h1>
-      <p className="mt-4 text-zinc-700">Effective date: 21 Dec 2025</p>
-      <p className="mt-4 text-zinc-700">
-        Laxm (OPC) Private Limited (“Laxm”, “we”, “our”, “us”) is committed to
-        protecting your privacy and handling personal data in compliance with
-        the General Data Protection Regulation (GDPR) and applicable laws. This
-        Privacy Policy explains what data we collect, how we use it, and your
-        rights.
-      </p>
+       <h1 className="text-3xl font-bold">Privacy Policy</h1>
+       <p className="mt-4 text-zinc-700">
+         Effective date: <time dateTime="2025-12-21">21 Dec 2025</time>
+       </p>
+       <p className="mt-4 text-zinc-700">
+         Laxm (OPC) Private Limited ("Laxm", "we", "our", "us") is committed to
+         protecting your privacy and handling personal data in compliance with
+         the General Data Protection Regulation (<cite><a href="https://gdpr-info.eu/" target="_blank" rel="noopener" data-source="https://gdpr-info.eu/">GDPR</a></cite>) and applicable laws. This
+         Privacy Policy explains what data we collect, how we use it, and your
+         rights.
+       </p>
       <h2 className="mt-8 text-xl font-semibold">Controller Information</h2>
       <p className="mt-2 text-zinc-700">
         Laxm (OPC) Private Limited
@@ -127,14 +129,33 @@ export default function PrivacyPolicy() {
         with a revised effective date. Continued use of the site signifies
         acceptance of the updated policy.
       </p>
-      <h2 className="mt-8 text-xl font-semibold">Contact</h2>
-      <p className="mt-2 text-zinc-700">
-        For privacy questions or rights requests, contact{" "}
-        <a className="underline" href="mailto:ask@thelaxm.com">
-          ask@thelaxm.com
-        </a>{" "}
-        or write to the address above.
-      </p>
-    </section>
+       <h2 className="mt-8 text-xl font-semibold">Contact</h2>
+       <p className="mt-2 text-zinc-700">
+         For privacy questions or rights requests, contact{" "}
+         <a className="underline" href="mailto:ask@thelaxm.com">
+           ask@thelaxm.com
+         </a>{" "}
+         or write to the address above.
+       </p>
+
+       {/* References Section */}
+       <h2 className="mt-12 text-xl font-semibold">References</h2>
+       <ul className="mt-2 list-disc pl-6 text-zinc-700">
+         <li>
+           General Data Protection Regulation (GDPR).{" "}
+           <cite>
+             <a
+               href="https://gdpr-info.eu/"
+               target="_blank"
+               rel="noopener"
+               data-source="https://gdpr-info.eu/"
+             >
+               GDPR-info.eu
+             </a>
+           </cite>
+           . Official resource for GDPR text and guidance.
+         </li>
+       </ul>
+     </section>
   );
 }
