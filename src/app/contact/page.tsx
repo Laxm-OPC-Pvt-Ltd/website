@@ -1,17 +1,43 @@
 import type { Metadata } from "next";
-import { canonicalUrl } from "@/lib/metadata";
+import { canonicalUrl, BASE_URL } from "@/lib/metadata";
 import Card from "@/components/Card";
 import ContactForm from "@/components/ContactForm";
 
 export const metadata: Metadata = {
   title: "Contact",
   description:
-    "Contact Laxm to discuss advisory, consulting, innovation and custom solution needs.",
-  keywords: ["Laxm", "Contact", "Consulting", "Advisory", "Innovation"],
+    "Contact Laxm (OPC) Private Limited to discuss advisory, consulting, innovation, and custom technology solutions. Based in Hyderabad, India.",
+  keywords: [
+    "Laxm",
+    "Laxm OPC Private Limited",
+    "Contact",
+    "Consulting",
+    "Advisory",
+    "Innovation",
+    "Hyderabad",
+    "India",
+  ],
   openGraph: {
-    images: [{ url: "/laxm_logo.png", width: 1200, height: 630 }],
+    title: "Contact Laxm (OPC) Private Limited",
+    description:
+      "Reach out to discuss advisory, consulting, innovation, and custom technology solutions. We respond within 24 hours.",
+    url: canonicalUrl("/contact"),
+    siteName: "Laxm",
+    type: "website",
+    images: [
+      {
+        url: "/laxm_logo.png",
+        width: 1200,
+        height: 630,
+        alt: "Laxm (OPC) Private Limited — Technology Advisory & Innovation",
+      },
+    ],
   },
   twitter: {
+    card: "summary_large_image",
+    title: "Contact Laxm (OPC) Private Limited",
+    description:
+      "Reach out to discuss advisory, consulting, innovation, and custom technology solutions. We respond within 24 hours.",
     images: ["/laxm_logo.png"],
   },
   alternates: {
@@ -20,8 +46,44 @@ export const metadata: Metadata = {
 };
 
 export default function Contact() {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "ContactPage",
+    "@id": `${BASE_URL}/contact`,
+    name: "Contact Laxm (OPC) Private Limited",
+    url: `${BASE_URL}/contact`,
+    description:
+      "Contact Laxm (OPC) Private Limited to discuss advisory, consulting, innovation, and custom technology solutions.",
+    isPartOf: { "@id": `${BASE_URL}/#website` },
+    breadcrumb: {
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        { "@type": "ListItem", position: 1, name: "Home", item: BASE_URL },
+        { "@type": "ListItem", position: 2, name: "Contact", item: `${BASE_URL}/contact` },
+      ],
+    },
+    mainEntity: {
+      "@type": "Organization",
+      "@id": `${BASE_URL}/#organization`,
+      name: "Laxm (OPC) Private Limited",
+      address: {
+        "@type": "PostalAddress",
+        streetAddress: "WeWork Rajapushpa Summit, Nanakramguda, Financial District",
+        addressLocality: "Hyderabad",
+        addressRegion: "Telangana",
+        postalCode: "500032",
+        addressCountry: "IN",
+      },
+    },
+  };
+
   return (
-    <main className="min-h-screen bg-[var(--navy)] relative overflow-hidden">
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <main className="min-h-screen bg-[var(--navy)] relative overflow-hidden">
       <div className="relative z-10 mx-auto max-w-7xl px-6 py-24 md:py-32">
         <div className="grid lg:grid-cols-2 gap-16 items-start">
           {/* Left Column: Context & Info */}
@@ -69,8 +131,9 @@ export default function Contact() {
                   <h3 className="text-white font-semibold text-lg">
                     Global HQ
                   </h3>
+                  <h4 className="text-gray-400 mt-1">Laxm (OPC) Private Limited</h4>
                   <p className="text-gray-400 mt-1">
-                    WeWork, Nanakramguda, Financial District
+                    WeWork Rajapushpa Summit, Nanakramguda, Financial District
                   </p>
                   <p className="text-gray-400 mt-1">
                     Hyderabad, Bharat. 500032
@@ -98,5 +161,6 @@ export default function Contact() {
         </div>
       </div>
     </main>
+    </>
   );
 }

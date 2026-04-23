@@ -110,6 +110,10 @@ const jsonLd = {
   },
   address: {
     "@type": "PostalAddress",
+    streetAddress: "WeWork Rajapushpa Summit, Nanakramguda, Financial District",
+    addressLocality: "Hyderabad",
+    addressRegion: "Telangana",
+    postalCode: "500032",
     addressCountry: "IN",
   },
 };
@@ -333,6 +337,22 @@ export default function RootLayout({
                     Terms of Service
                   </Link>
                 </li>
+                <li>
+                  <Link
+                    href="/terms-and-conditions"
+                    className="hover:text-[var(--gold)] transition-colors"
+                  >
+                    Terms &amp; Conditions
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/refund-policy"
+                    className="hover:text-[var(--gold)] transition-colors"
+                  >
+                    Refund Policy
+                  </Link>
+                </li>
               </ul>
             </div>
 
@@ -357,7 +377,7 @@ export default function RootLayout({
 
         <footer className="bg-[#01040f] border-t border-white/5">
           <div className="mx-auto max-w-7xl px-6 py-8 text-xs font-medium text-white/40 flex flex-col md:flex-row items-center justify-between gap-4">
-            <p>© {new Date().getFullYear()} Laxm. All rights reserved.</p>
+            <p>© {new Date().getFullYear()} Laxm (OPC) Private Limited. All rights reserved.</p>
             <p>Designed with precision. From India to the World.</p>
           </div>
         </footer>

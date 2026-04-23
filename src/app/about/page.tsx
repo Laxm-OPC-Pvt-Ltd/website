@@ -1,26 +1,78 @@
 import Card from "@/components/Card";
 import type { Metadata } from "next";
-import { canonicalUrl } from "@/lib/metadata";
+import { canonicalUrl, BASE_URL } from "@/lib/metadata";
 
 export const metadata: Metadata = {
   title: "About",
   description:
-    "Learn about Laxm's mission: premium, direction-driven, and value-focused technology advisory and innovation.",
-  keywords: ["Laxm", "About", "Advisory", "IT Consulting", "Innovation"],
+    "Laxm (OPC) Private Limited is a technology advisory and innovation company helping organizations design strategy, build scalable platforms, and deliver AI/ML-powered products.",
+  keywords: [
+    "Laxm",
+    "Laxm OPC Private Limited",
+    "About",
+    "Advisory",
+    "IT Consulting",
+    "Innovation",
+    "Technology Strategy",
+    "AI ML",
+    "Ram Amancha",
+    "Hyderabad",
+  ],
   alternates: {
     canonical: canonicalUrl("/about"),
   },
   openGraph: {
-    images: [{ url: "/laxm_logo.png", width: 1200, height: 630 }],
+    title: "About Laxm (OPC) Private Limited",
+    description:
+      "Technology advisory and innovation company helping organizations design strategy, build scalable platforms, and deliver AI/ML-powered products.",
+    url: canonicalUrl("/about"),
+    siteName: "Laxm",
+    type: "website",
+    images: [
+      {
+        url: "/laxm_logo.png",
+        width: 1200,
+        height: 630,
+        alt: "Laxm (OPC) Private Limited — Technology Advisory & Innovation",
+      },
+    ],
   },
   twitter: {
+    card: "summary_large_image",
+    title: "About Laxm (OPC) Private Limited",
+    description:
+      "Technology advisory and innovation company helping organizations design strategy, build scalable platforms, and deliver AI/ML-powered products.",
     images: ["/laxm_logo.png"],
   },
 };
 
 export default function About() {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "AboutPage",
+    "@id": `${BASE_URL}/about`,
+    name: "About Laxm (OPC) Private Limited",
+    url: `${BASE_URL}/about`,
+    description:
+      "Laxm (OPC) Private Limited is a technology advisory and innovation company helping organizations design strategy, build scalable platforms, and deliver AI/ML-powered products.",
+    isPartOf: { "@id": `${BASE_URL}/#website` },
+    about: { "@id": `${BASE_URL}/#organization` },
+    breadcrumb: {
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        { "@type": "ListItem", position: 1, name: "Home", item: BASE_URL },
+        { "@type": "ListItem", position: 2, name: "About", item: `${BASE_URL}/about` },
+      ],
+    },
+  };
+
   return (
-    <div className="flex flex-col">
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <div className="flex flex-col">
       {/* Hero Section */}
       <section className="hero-gradient text-white relative overflow-hidden py-24 min-h-[60vh] flex items-center">
         <div className="absolute inset-0 grid-overlay opacity-30 pointer-events-none" />
@@ -38,8 +90,8 @@ export default function About() {
                   About <span className="text-gradient-gold">Laxm</span>
                 </h1>
                 <p className="text-xl text-white/90 leading-relaxed font-medium mb-6">
-                  Laxm is a technology advisory and innovation company helping
-                  teams design strategy, build scalable platforms, and deliver
+                  Laxm (OPC) Private Limited is a technology advisory and innovation company helping
+                  clients, teams, and organizations design strategy, build scalable platforms, and deliver
                   AI/ML-powered products.
                 </p>
                 <div className="h-1 w-20 bg-gradient-to-r from-[var(--gold)] to-transparent rounded-full mb-6"></div>
@@ -298,5 +350,6 @@ export default function About() {
         </div>
       </section>
     </div>
+    </>
   );
 }
