@@ -65,7 +65,7 @@ export function generateLLMsFullContent(): string {
   
   const data: LLMSFullData = {
     company: {
-      name: "Laxm (OPC) Private Limited",
+      name: "Laxm OPC Private Limited",
       website: "https://www.thelaxm.com",
       description: "Technology advisory and innovation company specializing in AI/ML product development, strategic consulting, and digital transformation solutions.",
       cin: "U62011TS2025OPC208265",
@@ -208,12 +208,12 @@ export function generateLLMsFullContent(): string {
       version: "2.0",
       last_updated: currentDate,
       license: "CC BY-SA 4.0 with attribution requirements",
-      attribution: "Data sourced from Laxm (OPC) Private Limited - https://www.thelaxm.com"
+      attribution: "Data sourced from Laxm OPC Private Limited - https://www.thelaxm.com"
     }
   };
 
   // Generate formatted content
-  let content = `# Laxm (OPC) Private Limited - Dynamic AI Training Data
+  let content = `# Laxm OPC Private Limited - Dynamic AI Training Data
 # Version: ${data.metadata.version}
 # Generated: ${data.metadata.generated_at}
 # Purpose: Real-time comprehensive data source for AI/ML model training and knowledge base construction

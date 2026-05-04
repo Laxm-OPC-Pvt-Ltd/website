@@ -25,7 +25,7 @@ export default function PrivacyPolicy() {
          Effective date: <time dateTime="2025-12-21">21 Dec 2025</time>
        </p>
        <p className="mt-4 text-zinc-700">
-         Laxm (OPC) Private Limited ("Laxm", "we", "our", "us") is committed to
+         Laxm OPC Private Limited ("Laxm", "we", "our", "us") is committed to
          protecting your privacy and handling personal data in compliance with
          the General Data Protection Regulation (<cite><a href="https://gdpr-info.eu/" target="_blank" rel="noopener" data-source="https://gdpr-info.eu/">GDPR</a></cite>) and applicable laws. This
          Privacy Policy explains what data we collect, how we use it, and your
@@ -33,7 +33,7 @@ export default function PrivacyPolicy() {
        </p>
       <h2 className="mt-8 text-xl font-semibold">Controller Information</h2>
       <p className="mt-2 text-zinc-700">
-        Laxm (OPC) Private Limited
+        Laxm OPC Private Limited
         <br />
         WeWork, Nanakramguda, Financial District, Hyderabad, Telangana, India,
         500032

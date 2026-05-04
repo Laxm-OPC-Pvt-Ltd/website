@@ -4,7 +4,7 @@ import { canonicalUrl } from "@/lib/metadata";
 export const metadata: Metadata = {
   title: "Refund Policy",
   description:
-    "Laxm (OPC) Private Limited refund policy including free trial, general no-refund stance, exceptions, and processing timelines.",
+    "Laxm OPC Private Limited refund policy including free trial, general no-refund stance, exceptions, and processing timelines.",
   keywords: ["Refund Policy", "Free Trial", "Refunds", "Payments", "Laxm"],
   openGraph: { images: [{ url: "/laxm_logo.png", width: 1200, height: 630 }] },
   twitter: { images: ["/laxm_logo.png"] },
@@ -21,7 +21,7 @@ export default function RefundPolicy() {
          Effective date: <time dateTime="2025-12-21">21 Dec 2025</time>
        </p>
       <p className="mt-4 text-zinc-700">
-        This Refund Policy describes how Laxm (OPC) Private Limited (“Laxm”)
+        This Refund Policy describes how Laxm OPC Private Limited (“Laxm”)
         handles refunds for technology products and services.
       </p>
       <h2 className="mt-8 text-xl font-semibold">Free Trial</h2>

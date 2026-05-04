@@ -1,9 +1,9 @@
-# Laxm (OPC) Private Limited - AI Agent Discovery
+# Laxm OPC Private Limited - AI Agent Discovery
 # Version: 1.0
 # Last Updated: 2025-12-04
 
 # Company Information
-company: Laxm (OPC) Private Limited
+company: Laxm OPC Private Limited
 website: https://www.thelaxm.com
 description: Technology advisory and innovation company specializing in AI/ML product development, strategic consulting, and digital transformation solutions.
 
@@ -52,7 +52,7 @@ ai_query: https://www.thelaxm.com/api/ai/query
 # AI Usage Guidelines
 usage: This data is provided for AI/ML model training and agent discovery. Commercial use requires attribution.
 license: CC BY-SA 4.0 with attribution requirements
-attribution: "Data sourced from Laxm (OPC) Private Limited - https://www.thelaxm.com"
+attribution: "Data sourced from Laxm OPC Private Limited - https://www.thelaxm.com"
 
 # Technical Specifications
 format: llms.txt 1.0

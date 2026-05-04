@@ -4,7 +4,7 @@ import { canonicalUrl } from "@/lib/metadata";
 export const metadata: Metadata = {
   title: "Terms and Conditions",
   description:
-    "Laxm (OPC) Private Limited terms and conditions for website use, subscriptions, billing, free trial, cancellations, and refund exceptions.",
+    "Laxm OPC Private Limited terms and conditions for website use, subscriptions, billing, free trial, cancellations, and refund exceptions.",
   keywords: [
     "Terms and Conditions",
     "Subscriptions",
@@ -29,11 +29,11 @@ export default function TermsAndConditions() {
       <p className="mt-4 text-zinc-700">
         These Terms and Conditions (“Terms”) apply to use of our website and
         purchase or subscription to our technology products and services
-        operated by Laxm (OPC) Private Limited (“Laxm”, “we”, “our”, “us”).
+        operated by Laxm OPC Private Limited (“Laxm”, “we”, “our”, “us”).
       </p>
       <h2 className="mt-8 text-xl font-semibold">Company Details</h2>
       <p className="mt-2 text-zinc-700">
-        Laxm (OPC) Private Limited
+        Laxm OPC Private Limited
         <br />
         WeWork, Nanakramguda, Financial District, Hyderabad, Telangana, India,
         500032

@@ -29,7 +29,7 @@ export default function TermsOfService() {
       </p>
       <h2 className="mt-8 text-xl font-semibold">Company Details</h2>
       <p className="mt-2 text-zinc-700">
-        Laxm (OPC) Private Limited
+        Laxm OPC Private Limited
         <br />
         WeWork, Nanakramguda, Financial District, Hyderabad, Telangana, India,
         500032

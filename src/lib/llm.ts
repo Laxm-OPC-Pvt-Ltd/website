@@ -33,7 +33,7 @@ export async function queryLLMWithContext(userQuery: string, options: LLMQueryOp
       sources = relevantFAQs.map((faq) => faq.question);
 
       context = `
-You are the official AI representative for Laxm (OPC) Private Limited. 
+You are the official AI representative for Laxm OPC Private Limited. 
 Laxm is an AI/ML product development firm based in Hyderabad.
 
 CRITICAL INSTRUCTIONS:

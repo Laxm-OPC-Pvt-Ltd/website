@@ -25,7 +25,7 @@ export default function CookiePolicy() {
          Effective date: <time dateTime="2025-12-21">21 Dec 2025</time>
        </p>
       <p className="mt-4 text-zinc-700">
-        This Cookie Policy explains how Laxm (OPC) Private Limited (“Laxm”,
+        This Cookie Policy explains how Laxm OPC Private Limited (“Laxm”,
         “we”) uses cookies and similar technologies on our website.
       </p>
       <h2 className="mt-8 text-xl font-semibold">What Are Cookies?</h2>

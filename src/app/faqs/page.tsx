@@ -5,9 +5,9 @@ import type { Metadata } from "next";
 
 export async function generateMetadata(): Promise<Metadata> {
   return {
-    title: "Frequently Asked Questions | Laxm (OPC) Private Limited",
+    title: "Frequently Asked Questions | Laxm OPC Private Limited",
     description:
-      "Find answers to common questions about Laxm's AI/ML services, OPC structure benefits, Hyderabad location, and project processes. Expert technology advisory and innovation.",
+      "Find answers to common questions about Laxm's AI/ML services, benefits, Hyderabad location, and project processes. Expert technology advisory and innovation.",
     keywords: [
       "FAQ",
       "Laxm OPC Private Limited",
@@ -21,7 +21,7 @@ export async function generateMetadata(): Promise<Metadata> {
       canonical: canonicalUrl("/faqs"),
     },
     openGraph: {
-      title: "FAQ - Laxm (OPC) Private Limited",
+      title: "FAQ - Laxm OPC Private Limited",
       description:
         "Get answers to your questions about our AI/ML services, OPC benefits, and project processes.",
       url: canonicalUrl("/faqs"),
@@ -32,13 +32,13 @@ export async function generateMetadata(): Promise<Metadata> {
           url: "/laxm_logo.png",
           width: 1200,
           height: 630,
-          alt: "Laxm (OPC) Private Limited — FAQ",
+          alt: "Laxm OPC Private Limited — FAQ",
         },
       ],
     },
     twitter: {
       card: "summary_large_image",
-      title: "FAQ - Laxm (OPC) Private Limited",
+      title: "FAQ - Laxm OPC Private Limited",
       description:
         "Find answers about our AI/ML services, OPC benefits, and project processes.",
       images: ["/laxm_logo.png"],
@@ -53,9 +53,9 @@ export default function FAQPage() {
     "@type": "FAQPage",
     "@id": `${BASE_URL}/faqs`,
     url: `${BASE_URL}/faqs`,
-    name: "Frequently Asked Questions - Laxm (OPC) Private Limited",
+    name: "Frequently Asked Questions - Laxm OPC Private Limited",
     description:
-      "Find answers to common questions about Laxm's AI/ML services, OPC structure benefits, Hyderabad location, and project processes.",
+      "Find answers to common questions about Laxm's AI/ML services, benefits, Hyderabad location, and project processes.",
     isPartOf: { "@id": `${BASE_URL}/#website` },
     about: { "@id": `${BASE_URL}/#organization` },
     breadcrumb: {

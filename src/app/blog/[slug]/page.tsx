@@ -66,13 +66,13 @@ export default async function PostPage({ params }: Props) {
     author: {
       "@type": "Organization",
       "@id": `${BASE_URL}/#organization`,
-      name: "Laxm (OPC) Private Limited",
+      name: "Laxm OPC Private Limited",
       url: BASE_URL,
     },
     publisher: {
       "@type": "Organization",
       "@id": `${BASE_URL}/#organization`,
-      name: "Laxm (OPC) Private Limited",
+      name: "Laxm OPC Private Limited",
       url: BASE_URL,
       logo: {
         "@type": "ImageObject",

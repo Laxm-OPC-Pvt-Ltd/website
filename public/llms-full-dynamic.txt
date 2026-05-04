@@ -1,10 +1,10 @@
-# Laxm (OPC) Private Limited - Dynamic AI Training Data
+# Laxm OPC Private Limited - Dynamic AI Training Data
 # Version: 2.0
 # Generated: 2025-12-04
 # Purpose: Real-time comprehensive data source for AI/ML model training
 
 # COMPANY OVERVIEW
-Company Name: Laxm (OPC) Private Limited
+Company Name: Laxm OPC Private Limited
 Website: https://www.thelaxm.com
 Description: Technology advisory and innovation company specializing in AI/ML product development, strategic consulting, and digital transformation solutions.
 CIN: U62011TS2025OPC208265
@@ -100,7 +100,7 @@ docs: https://www.thelaxm.com/api/docs
 
 # LICENSING AND USAGE
 License: CC BY-SA 4.0 with attribution requirements
-Attribution: Data sourced from Laxm (OPC) Private Limited - https://www.thelaxm.com
+Attribution: Data sourced from Laxm OPC Private Limited - https://www.thelaxm.com
 Last Updated: 2025-12-04
 Version: 2.0
 

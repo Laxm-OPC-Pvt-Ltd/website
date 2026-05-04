@@ -6,7 +6,7 @@ import ContactForm from "@/components/ContactForm";
 export const metadata: Metadata = {
   title: "Contact",
   description:
-    "Contact Laxm (OPC) Private Limited to discuss advisory, consulting, innovation, and custom technology solutions. Based in Hyderabad, India.",
+    "Contact Laxm OPC Private Limited to discuss advisory, consulting, innovation, and custom technology solutions. Based in Hyderabad, India.",
   keywords: [
     "Laxm",
     "Laxm OPC Private Limited",
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     "India",
   ],
   openGraph: {
-    title: "Contact Laxm (OPC) Private Limited",
+    title: "Contact Laxm OPC Private Limited",
     description:
       "Reach out to discuss advisory, consulting, innovation, and custom technology solutions. We respond within 24 hours.",
     url: canonicalUrl("/contact"),
@@ -29,13 +29,13 @@ export const metadata: Metadata = {
         url: "/laxm_logo.png",
         width: 1200,
         height: 630,
-        alt: "Laxm (OPC) Private Limited — Technology Advisory & Innovation",
+        alt: "Laxm OPC Private Limited — Technology Advisory & Innovation",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Contact Laxm (OPC) Private Limited",
+    title: "Contact Laxm OPC Private Limited",
     description:
       "Reach out to discuss advisory, consulting, innovation, and custom technology solutions. We respond within 24 hours.",
     images: ["/laxm_logo.png"],
@@ -50,10 +50,10 @@ export default function Contact() {
     "@context": "https://schema.org",
     "@type": "ContactPage",
     "@id": `${BASE_URL}/contact`,
-    name: "Contact Laxm (OPC) Private Limited",
+    name: "Contact Laxm OPC Private Limited",
     url: `${BASE_URL}/contact`,
     description:
-      "Contact Laxm (OPC) Private Limited to discuss advisory, consulting, innovation, and custom technology solutions.",
+      "Contact Laxm OPC Private Limited to discuss advisory, consulting, innovation, and custom technology solutions.",
     isPartOf: { "@id": `${BASE_URL}/#website` },
     breadcrumb: {
       "@type": "BreadcrumbList",
@@ -65,7 +65,7 @@ export default function Contact() {
     mainEntity: {
       "@type": "Organization",
       "@id": `${BASE_URL}/#organization`,
-      name: "Laxm (OPC) Private Limited",
+      name: "Laxm OPC Private Limited",
       address: {
         "@type": "PostalAddress",
         streetAddress: "WeWork Rajapushpa Summit, Nanakramguda, Financial District",
@@ -131,7 +131,7 @@ export default function Contact() {
                   <h3 className="text-white font-semibold text-lg">
                     Global HQ
                   </h3>
-                  <h4 className="text-gray-400 mt-1">Laxm (OPC) Private Limited</h4>
+                  <h4 className="text-gray-400 mt-1">Laxm OPC Private Limited</h4>
                   <p className="text-gray-400 mt-1">
                     WeWork Rajapushpa Summit, Nanakramguda, Financial District
                   </p>

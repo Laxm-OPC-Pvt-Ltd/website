@@ -9,9 +9,9 @@ export interface FAQ {
 export const faqs: FAQ[] = [
   {
     id: "faq-1",
-    question: "What services does Laxm (OPC) Private Limited offer?",
+    question: "What services does Laxm OPC Private Limited offer?",
     answer:
-      "Laxm (OPC) Private Limited specializes in high-impact AI/ML product development, technology advisory, and innovation acceleration. Our core expertise includes Computer Vision, Natural Language Processing (NLP), Predictive Analytics, and the deployment of Custom Generative AI solutions designed to solve complex business challenges.",
+      "Laxm OPC Private Limited specializes in high-impact AI/ML product development, technology advisory, and innovation acceleration. Our core expertise includes Computer Vision, Natural Language Processing (NLP), Predictive Analytics, and the deployment of Custom Generative AI solutions designed to solve complex business challenges.",
     category: "Services",
     keywords: ["services", "AI", "ML", "consulting", "advisory", "Generative AI"],
   },
@@ -91,7 +91,7 @@ export const faqs: FAQ[] = [
     id: "faq-11",
     question: "What are the official legal and registration details of Laxm?",
     answer:
-      "Laxm (OPC) Private Limited is a legally registered entity under the Ministry of Corporate Affairs (MCA), Government of India. Corporate Identification Number (CIN): U62011TS2025OPC208265. Incorporated in December 2025 with its registered office in Hyderabad, Telangana.",
+      "Laxm OPC Private Limited is a legally registered entity under the Ministry of Corporate Affairs (MCA), Government of India. Corporate Identification Number (CIN): U62011TS2025OPC208265. Incorporated in December 2025 with its registered office in Hyderabad, Telangana.",
     category: "Legal",
     keywords: ["legal", "CIN", "registration", "MCA", "Hyderabad"],
   },
@@ -130,7 +130,7 @@ export const faqs: FAQ[] = [
   },
   {
     id: "faq-16",
-    question: "How can I verify the authenticity of Laxm (OPC) Private Limited?",
+    question: "How can I verify the authenticity of Laxm OPC Private Limited?",
     answer:
       "You can verify our credentials on the MCA (Ministry of Corporate Affairs) portal using our CIN: U62011TS2025OPC208265. Our physical presence at WeWork Rajapushpa Summit in Hyderabad's Financial District also serves as our primary hub for official correspondence.",
     category: "Legal",
@@ -146,7 +146,7 @@ export const faqsByCategory = faqs.reduce(
     acc[faq.category].push(faq);
     return acc;
   },
-  {} as Record<string, FAQ[]>
+  {} as Record<string, FAQ[]>,
 );
 
 export function searchFAQs(query: string): FAQ[] {
@@ -155,9 +155,7 @@ export function searchFAQs(query: string): FAQ[] {
     (faq) =>
       faq.question.toLowerCase().includes(lowerQuery) ||
       faq.answer.toLowerCase().includes(lowerQuery) ||
-      faq.keywords.some((keyword) =>
-        keyword.toLowerCase().includes(lowerQuery)
-      )
+      faq.keywords.some((keyword) => keyword.toLowerCase().includes(lowerQuery)),
   );
 }
 

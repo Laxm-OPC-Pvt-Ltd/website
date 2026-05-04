@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Poppins, Inter } from "next/font/google";
+import { Inter, Poppins } from "next/font/google";
 import Script from "next/script";
 import "./globals.css";
 import Link from "next/link";
@@ -7,16 +7,16 @@ import Logo from "@/components/Logo";
 import LinkedInIcon from "@/components/icons/LinkedIn";
 import { canonicalUrl } from "@/lib/metadata";
 
-const poppins = Poppins({
-  variable: "--font-poppins",
-  weight: ["400", "500", "600", "700"],
+const inter = Inter({
   subsets: ["latin"],
+  variable: "--font-inter",
   display: "swap",
 });
 
-const inter = Inter({
-  variable: "--font-inter",
+const poppins = Poppins({
   subsets: ["latin"],
+  weight: ["400", "500", "600", "700", "800"],
+  variable: "--font-poppins",
   display: "swap",
 });
 
@@ -72,7 +72,7 @@ const jsonLd = {
   "@context": "https://schema.org",
   "@type": "Organization",
   "@id": "https://www.thelaxm.com/#organization",
-  name: "Laxm (OPC) Private Limited",
+  name: "Laxm OPC Private Limited",
   alternateName: ["Laxm", "Lakshyam"],
   url: "https://www.thelaxm.com",
   logo: {
@@ -166,7 +166,7 @@ export default function RootLayout({
         />
       </head>
       <body
-        className={`${poppins.variable} ${inter.variable} antialiased bg-[var(--background)] text-[var(--foreground)]`}
+        className={`${inter.variable} ${poppins.variable} font-sans antialiased bg-black text-white`}
       >
         {/* Sticky Header - Deep Navy & Gold */}
         <header className="fixed top-0 left-0 right-0 z-50 bg-[var(--navy)]/95 backdrop-blur-md border-b border-white/5 transition-all shadow-lg shadow-black/20">
@@ -204,6 +204,13 @@ export default function RootLayout({
                 className="hover:text-[var(--gold)] transition-all relative group py-2"
               >
                 Products
+                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[var(--gold)] transition-all duration-300 group-hover:w-full box-shadow-gold"></span>
+              </Link>
+              <Link
+                href="/faqs"
+                className="hover:text-[var(--gold)] transition-all relative group py-2"
+              >
+                FAQs
                 <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[var(--gold)] transition-all duration-300 group-hover:w-full box-shadow-gold"></span>
               </Link>
               <Link
@@ -287,6 +294,15 @@ export default function RootLayout({
                   >
                     <span className="w-1 h-1 rounded-full bg-[var(--gold)] opacity-0 hover:opacity-100 transition-opacity"></span>
                     Products
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/faqs"
+                    className="hover:text-[var(--gold)] transition-colors flex items-center gap-2"
+                  >
+                    <span className="w-1 h-1 rounded-full bg-[var(--gold)] opacity-0 hover:opacity-100 transition-opacity"></span>
+                    FAQs
                   </Link>
                 </li>
                 <li>
@@ -377,7 +393,7 @@ export default function RootLayout({
 
         <footer className="bg-[#01040f] border-t border-white/5">
           <div className="mx-auto max-w-7xl px-6 py-8 text-xs font-medium text-white/40 flex flex-col md:flex-row items-center justify-between gap-4">
-            <p>© {new Date().getFullYear()} Laxm (OPC) Private Limited. All rights reserved.</p>
+            <p>© {new Date().getFullYear()} Laxm OPC Private Limited. All rights reserved.</p>
             <p>Designed with precision. From India to the World.</p>
           </div>
         </footer>
