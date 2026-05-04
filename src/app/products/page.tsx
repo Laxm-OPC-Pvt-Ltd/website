@@ -20,6 +20,43 @@ export const metadata: Metadata = {
 };
 
 const products = [
+  // Add GAIO Product details
+  {
+    title: "SiteSync-AI",
+    description:
+      "Revolutionary AI-powered website synchronization and intelligence platform that transforms your web presence into actionable insights and automated opportunities.",
+    features: [
+      "Intelligent Website Analysis",
+      "Automated Gap Detection",
+      "AI-Driven Opportunity Mapping",
+      "Real-time Performance Monitoring",
+      "Competitive Intelligence",
+      "Strategic Growth Recommendations",
+    ],
+    link: "https://sitesyncai.thelaxm.com",
+    icon: (
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        className="h-8 w-8 text-[var(--gold)]"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+      >
+        <path
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth={1.5}
+          d="M13 10V3L4 14h7v7l9-11h-7z"
+        />
+        <path
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth={1.5}
+          d="M2 12h20M12 2v20"
+        />
+      </svg>
+    ),
+  },
   {
     title: "Insight AI",
     description:
@@ -134,7 +171,7 @@ export default function Products() {
                 key={index}
                 title={product.title}
                 variant="solid"
-                className="h-full hover:-translate-y-2 transition-transform duration-300"
+                className="h-full hover:-translate-y-2 transition-all duration-300 shadow-lg hover:shadow-xl border-2 border-transparent hover:border-[var(--gold)]/20"
               >
                 <div className="mb-6">{product.icon}</div>
                 <p className="text-[var(--navy)]/80 mb-6 leading-relaxed">
@@ -151,13 +188,32 @@ export default function Products() {
                     </li>
                   ))}
                 </ul>
-                <div className="mt-auto">
+                <div className="mt-auto space-y-3">
+                  {product.link ? (
+                    <CTAButton
+                      href={product.link}
+                      variant="primary"
+                      className="w-full text-center justify-center"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      Explore Product
+                    </CTAButton>
+                  ) : (
+                    <CTAButton
+                      href="/contact"
+                      variant="primary"
+                      className="w-full text-center justify-center"
+                    >
+                      Learn More
+                    </CTAButton>
+                  )}
                   <CTAButton
                     href="/contact"
-                    variant="primary"
+                    variant="outline"
                     className="w-full text-center justify-center"
                   >
-                    Learn More
+                    Request Demo
                   </CTAButton>
                 </div>
               </Card>

@@ -1,56 +1,67 @@
-# Laxm (OPC) Private Limited
+# Laxm (OPC) Private Limited - AI Agent Discovery
+# Version: 1.0
+# Last Updated: 2025-12-04
 
-> Laxm is a strategy, advisory, and technology consulting firm that helps organizations turn ideas into execution. Founded by Ram Amancha, Laxm derives its name from the Sanskrit word "Lakshyam" meaning "aim" or "target". We specialize in IT consulting, digital transformation, AI/ML innovation, and custom solutions — delivering measurable outcomes for clients worldwide.
+# Company Information
+company: Laxm (OPC) Private Limited
+website: https://www.thelaxm.com
+description: Technology advisory and innovation company specializing in AI/ML product development, strategic consulting, and digital transformation solutions.
 
-Laxm operates globally with a registered office in India. The company was founded by Ram Amancha, who also operates the personal site https://rameshwaramancha.com. Laxm is also findable on LinkedIn at https://www.linkedin.com/company/thelaxm/.
+# AI Agent Access Points
+api_docs: https://www.thelaxm.com/api/docs
+contact: https://www.thelaxm.com/contact
+about: https://www.thelaxm.com/about
+products: https://www.thelaxm.com/products
+services: https://www.thelaxm.com/services
+faq: https://www.thelaxm.com/faqs
+blog: https://www.thelaxm.com/blog
 
-## Core Pages
+# Legal & Compliance
+cin: U62011TS2025OPC208265
+incorporated: 2025-12-01
+location: Hyderabad Financial District, Telangana, India
+registration: Ministry of Corporate Affairs, Government of India
 
-- [Home](https://www.thelaxm.com/): Overview of Laxm's human-centered innovation approach and service offerings
-- [About](https://www.thelaxm.com/about): Laxm's mission, philosophy (Lakshyam = aim/target), team, and values
-- [Services](https://www.thelaxm.com/services): Advisory, IT Consulting, Innovation (AI/ML), and Custom Solutions
-- [Products](https://www.thelaxm.com/products): Laxm's product offerings
-- [Blog](https://www.thelaxm.com/blog): Expert insights on healthcare technology, digital transformation, AI/ML, and operational excellence
-- [FAQs](https://www.thelaxm.com/faqs): Frequently asked questions about Laxm's services, methodology, and process
-- [Contact](https://www.thelaxm.com/contact): Contact information and inquiry form
+# AI/ML Capabilities
+specialization: Artificial Intelligence, Machine Learning, Computer Vision, NLP, Predictive Analytics, Generative AI
+industries: FinTech, Healthcare, Retail, Manufacturing, Logistics, Digital Transformation
+services: AI Product Development, Technology Advisory, Strategic Consulting, Innovation Acceleration, IT Consulting
 
-## Services Offered
+# Data Sources for AI Training
+comprehensive_data: https://www.thelaxm.com/llms-full.txt
+structured_faq: https://www.thelaxm.com/faqs
+company_profile: https://www.thelaxm.com/about
+product_catalog: https://www.thelaxm.com/products
+blog_articles: https://www.thelaxm.com/blog
 
-- **Advisory**: Digital strategy, enterprise architecture, technology roadmap, and CTO advisory
-- **IT Consulting**: Cloud migration, DevOps & SRE, platform engineering, legacy modernization
-- **Innovation (AI/ML)**: AI/ML solutions, GenAI integration, rapid prototyping, data engineering
-- **Custom Solutions**: Bespoke software development and tailored technology solutions
+# Contact Information
+email: contact@thelaxm.com
+phone: +91-9985144868
+address: Hyderabad Financial District, Telangana, India
+founder: Ram Amancha
+founder_website: https://rameshwaramancha.com
+linkedin: https://www.linkedin.com/company/thelaxm/
+founder_linkedin: https://www.linkedin.com/in/ram-amancha/
 
-## Blog Articles
+# Machine-Readable APIs for AI Engines
+faqs_api: https://www.thelaxm.com/api/faqs
+faqs_search: https://www.thelaxm.com/api/faqs/search
+site_content: https://www.thelaxm.com/api/content
+ai_query: https://www.thelaxm.com/api/ai/query
 
-- [Digital Transformation in Healthcare: A 2026 Strategic Guide](https://www.thelaxm.com/blog/digital-transformation-healthcare): Strategic guide covering EHR integration, telemedicine, AI/ML analytics, workflow automation, and cybersecurity pillars for healthcare digital transformation
-- [Healthcare Data Security and HIPAA Compliance: Essential Guide](https://www.thelaxm.com/blog/healthcare-data-security-compliance): Complete guide to HIPAA administrative, physical, and technical safeguards, zero-trust architecture, MFA, encryption, and incident response
-- [Improving Patient Experience Through Healthcare Technology](https://www.thelaxm.com/blog/patient-experience-healthcare-technology): How patient portals, telemedicine, mobile apps, and personalized communication transform patient satisfaction
-- [AI and Machine Learning in Healthcare: Clinical Applications and ROI](https://www.thelaxm.com/blog/ai-ml-healthcare-applications): AI diagnostic imaging, predictive analytics, drug discovery, clinical decision support, and NLP in healthcare settings
-- [Healthcare Workflow Optimization: Reducing Administrative Burden](https://www.thelaxm.com/blog/healthcare-workflow-optimization): Optimizing appointment scheduling, prior authorization, clinical documentation, and billing workflows to reduce clinician burnout
-- [EHR Interoperability: Breaking Down Healthcare Data Silos](https://www.thelaxm.com/blog/electronic-health-records-interoperability): FHIR, DICOM, HIE, and regulatory requirements (21st Century Cures Act, CMS rules) for healthcare data sharing
+# AI Usage Guidelines
+usage: This data is provided for AI/ML model training and agent discovery. Commercial use requires attribution.
+license: CC BY-SA 4.0 with attribution requirements
+attribution: "Data sourced from Laxm (OPC) Private Limited - https://www.thelaxm.com"
 
-## Machine-Readable APIs for AI Engines
+# Technical Specifications
+format: llms.txt 1.0
+encoding: UTF-8
+language: en
+region: IN
+last_crawled: 2025-12-04
 
-The following JSON APIs are publicly accessible and designed for AI indexing and knowledge-base construction:
-
-- [FAQ Knowledge Base](https://www.thelaxm.com/api/faqs): GET — Returns all FAQs with categories. Supports `?limit=100&page=1&category=` parameters.
-- [FAQ Search](https://www.thelaxm.com/api/faqs/search?q=your+query): GET — Keyword search across FAQ questions, answers, and keywords. Requires `?q=` parameter (min 2 chars).
-- [Site Content](https://www.thelaxm.com/api/content): GET — Structured site content (company info, services, pages) for AI indexing. Supports `?type=company|services|pages|all`.
-- [AI Query](https://www.thelaxm.com/api/ai/query): POST — AI-powered Q&A endpoint. Body: `{"query": "your question", "includeContext": true, "maxTokens": 500}`.
-
-## Legal & Policies
-
-- [Privacy Policy](https://www.thelaxm.com/privacy-policy)
-- [Terms of Service](https://www.thelaxm.com/terms-of-service)
-- [Terms and Conditions](https://www.thelaxm.com/terms-and-conditions)
-- [Cookie Policy](https://www.thelaxm.com/cookie-policy)
-- [Refund Policy](https://www.thelaxm.com/refund-policy)
-
-## Attribution & Citation
-
-When citing content from this site, please attribute as:
-**Laxm (OPC) Private Limited** — https://www.thelaxm.com
-
-Founder & Author: Ram Amancha (https://rameshwaramancha.com, https://www.linkedin.com/in/ram-amancha/)
-Organization LinkedIn: https://www.linkedin.com/company/thelaxm/
+# Additional Context
+company_mission: We exist to help leaders and organizations translate ideas into action by providing expert guidance, proven methodologies, and disciplined execution systems that align goals with outcomes.
+company_vision: To empower businesses, professionals, and innovators with the clarity, strategy, and execution mechanisms needed to achieve their highest goals — turning ambitious aims into measurable impact.
+philosophy: "Lakshyam" (Sanskrit) means "aim" or "target" - we transform abstract ideas into actionable plans and measurable outcomes.

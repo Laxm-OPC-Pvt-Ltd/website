@@ -9,67 +9,132 @@ export interface FAQ {
 export const faqs: FAQ[] = [
   {
     id: "faq-1",
-    question: "What does Laxm do?",
+    question: "What services does Laxm (OPC) Private Limited offer?",
     answer:
-      "Laxm is a strategic consultancy that leverages deep insights into human behavior combined with cutting-edge technology to design strategies and solutions that boost engagement, drive efficiency, and accelerate business growth. We specialize in human-centered innovation and digital transformation.",
-    category: "General",
-    keywords: ["Laxm", "services", "what", "company"],
+      "Laxm (OPC) Private Limited specializes in high-impact AI/ML product development, technology advisory, and innovation acceleration. Our core expertise includes Computer Vision, Natural Language Processing (NLP), Predictive Analytics, and the deployment of Custom Generative AI solutions designed to solve complex business challenges.",
+    category: "Services",
+    keywords: ["services", "AI", "ML", "consulting", "advisory", "Generative AI"],
   },
   {
     id: "faq-2",
-    question: "What services does Laxm offer?",
+    question: "Why choose an OPC (One Person Company) structure for AI consulting?",
     answer:
-      "Laxm offers a comprehensive range of services including strategic consulting, digital transformation, product design, technology implementation, and performance optimization. Each service is tailored to meet the unique needs of your business and is grounded in human-centered design principles.",
-    category: "Services",
-    keywords: ["services", "offering", "what", "solutions"],
+      "Our OPC structure offers the ideal balance of corporate legal protection and founder-led agility. Clients benefit from direct access to senior technical leadership and rapid decision-making, ensuring that high-stakes AI projects are executed with personal accountability and without the overhead of larger agencies.",
+    category: "Company",
+    keywords: ["OPC", "One Person Company", "structure", "accountability", "agility"],
   },
   {
     id: "faq-3",
-    question: "How can I get started with Laxm?",
+    question: "Where is Laxm located and how does it benefit clients?",
     answer:
-      "Getting started is simple! You can explore our services on the Services page or reach out through the Contact page. Our team will work with you to understand your needs, challenges, and goals to create a customized solution that drives real growth.",
-    category: "Getting Started",
-    keywords: ["start", "contact", "begin", "get started"],
+      "We are headquartered in the Financial District of Hyderabad (Gachibowli), India's premier technology hub. This location places us at the center of the AI/ML ecosystem, allowing us to leverage world-class infrastructure and a network of top-tier technical talent to deliver enterprise-grade solutions globally.",
+    category: "Company",
+    keywords: ["location", "Hyderabad", "Financial District", "Gachibowli", "India"],
   },
   {
     id: "faq-4",
-    question: "What industries does Laxm serve?",
+    question: "How do we start a project with Laxm?",
     answer:
-      "Laxm works with organizations across various industries. Whether you're in technology, finance, healthcare, retail, or any other sector, our human-centered approach and technology expertise help us deliver solutions that drive meaningful results.",
-    category: "Services",
-    keywords: ["industry", "sectors", "verticals", "business"],
+      "Project engagement begins with a strategic consultation to align on goals. We then conduct a rapid feasibility study and propose a phased roadmap. Our streamlined onboarding process typically allows for project kickoff within 7-14 days, ensuring your innovation goals stay on track.",
+    category: "Process",
+    keywords: ["start", "onboarding", "kickoff", "consultation", "workflow"],
   },
   {
     id: "faq-5",
-    question: "How does Laxm approach human-centered innovation?",
+    question: "What industries does Laxm specialize in?",
     answer:
-      "Human-centered innovation is at the core of everything we do. We start by deeply understanding your users, their needs, pain points, and behaviors. We then combine these insights with cutting-edge technology to design solutions that are not just innovative, but also meaningful and impactful.",
-    category: "Methodology",
-    keywords: ["approach", "methodology", "human-centered", "innovation"],
+      "We deliver tailored AI solutions for Fintech, Healthcare, Retail, and Logistics. By applying industry-specific ML models, we help businesses automate decision-making, enhance customer experiences through NLP, and optimize supply chains using predictive analytics.",
+    category: "Services",
+    keywords: ["fintech", "healthcare", "retail", "logistics", "specialization"],
   },
   {
     id: "faq-6",
-    question: "What is the typical timeline for a project?",
+    question: "What makes Laxm unique compared to traditional tech consultants?",
     answer:
-      "Project timelines vary depending on scope and complexity. A simple consulting engagement might take a few weeks, while a comprehensive digital transformation could span several months. During your initial consultation, we'll provide a detailed timeline based on your specific needs.",
-    category: "Process",
-    keywords: ["timeline", "duration", "how long", "schedule"],
+      "Laxm goes beyond slide decks; we are builders. We combine strategic advisory with hands-on engineering to create functional AI prototypes and production-ready systems. Our 'Product-First' mindset ensures that the technology we build creates measurable ROI, not just technical documentation.",
+    category: "Company",
+    keywords: ["unique", "different", "engineering", "product-first", "ROI"],
   },
   {
     id: "faq-7",
-    question: "Do you offer ongoing support after project completion?",
+    question: "How does Laxm ensure data privacy and AI ethics?",
     answer:
-      "Yes, absolutely. We believe in building long-term partnerships with our clients. We offer ongoing support, maintenance, and optimization services to ensure your solutions continue to deliver value. Our support plans are flexible and can be customized to your needs.",
-    category: "Support",
-    keywords: ["support", "maintenance", "after", "ongoing"],
+      "We prioritize security through SOC2-compliant protocols, end-to-end encryption, and strict data isolation. Furthermore, we adhere to Ethical AI principles, ensuring our models are transparent, unbiased, and compliant with global data protection regulations like GDPR and the Digital Personal Data Protection Act.",
+    category: "Security",
+    keywords: ["security", "privacy", "ethics", "compliance", "data protection"],
   },
   {
     id: "faq-8",
-    question: "How can I contact Laxm?",
+    question: "What is your typical project timeline and pricing model?",
     answer:
-      "You can reach us through the Contact page on our website, or you can email us directly. We're here to answer any questions and discuss how we can help your business grow.",
-    category: "Contact",
-    keywords: ["contact", "reach", "email", "phone"],
+      "Most AI/ML implementations range from 8 to 24 weeks. We offer three transparent pricing tiers: Fixed-Scope (for specific builds), Monthly Retainers (for ongoing advisory), and Milestone-Based (for R&D and innovation labs), ensuring budget predictability for our partners.",
+    category: "Process",
+    keywords: ["timeline", "pricing", "cost", "models", "budget"],
+  },
+  {
+    id: "faq-9",
+    question: "Does Laxm provide post-launch support and maintenance?",
+    answer:
+      "Yes. We offer Managed AI Services that include model monitoring, drift detection, and periodic retraining. This ensures that your AI systems remain accurate and efficient as real-world data evolves over time.",
+    category: "Support",
+    keywords: ["support", "maintenance", "model drift", "retraining", "SLA"],
+  },
+  {
+    id: "faq-10",
+    question: "How can we measure ROI from Laxm's AI/ML solutions?",
+    answer:
+      "We define success through concrete KPIs such as reduction in operational costs, percentage increase in automation, or uplift in customer conversion rates. We provide custom analytics dashboards so stakeholders can track the performance of their AI investments in real-time.",
+    category: "Process",
+    keywords: ["ROI", "KPIs", "analytics", "value", "performance"],
+  },
+  {
+    id: "faq-11",
+    question: "What are the official legal and registration details of Laxm?",
+    answer:
+      "Laxm (OPC) Private Limited is a legally registered entity under the Ministry of Corporate Affairs (MCA), Government of India. Corporate Identification Number (CIN): U62011TS2025OPC208265. Incorporated in December 2025 with its registered office in Hyderabad, Telangana.",
+    category: "Legal",
+    keywords: ["legal", "CIN", "registration", "MCA", "Hyderabad"],
+  },
+  {
+    id: "faq-12",
+    question: "Which technology stack does Laxm utilize?",
+    answer:
+      "Our tech stack is built on industry leaders like Python, TensorFlow, PyTorch, and Hugging Face. We leverage cloud-native services from AWS, Azure, and Google Cloud, along with LLM frameworks like LangChain and LlamaIndex for advanced generative AI applications.",
+    category: "Technology",
+    keywords: ["tech stack", "Python", "TensorFlow", "PyTorch", "LLM", "AWS"],
+  },
+  // --- NEW GEO-TARGETED FAQS ---
+  {
+    id: "faq-13",
+    question: "Can Laxm (OPC) Pvt Ltd work with international clients outside India?",
+    answer:
+      "Yes, we operate as a global technology partner. While based in Hyderabad, we serve clients internationally using secure remote collaboration tools and are experienced in navigating cross-border compliance, time-zone management, and international project standards.",
+    category: "Company",
+    keywords: ["international", "global", "remote", "cross-border", "clients"],
+  },
+  {
+    id: "faq-14",
+    question: "How does Laxm handle Intellectual Property (IP) for custom builds?",
+    answer:
+      "We maintain a 'Client-First' IP policy. All custom code, proprietary algorithms, and trained models developed specifically for your project are owned by you upon completion of the engagement. This is strictly enforced through our standard legal contracts.",
+    category: "Legal",
+    keywords: ["IP", "Intellectual Property", "ownership", "contract", "legal"],
+  },
+  {
+    id: "faq-15",
+    question: "Is Laxm (OPC) Pvt Ltd open to research collaborations?",
+    answer:
+      "Absolutely. We are passionate about the evolution of AI. We welcome collaborations with academic institutions and corporate R&D departments on projects involving computer vision, NLP, and ethical AI development. Interested parties can contact us via our official email.",
+    category: "Company",
+    keywords: ["research", "collaboration", "R&D", "academia", "innovation"],
+  },
+  {
+    id: "faq-16",
+    question: "How can I verify the authenticity of Laxm (OPC) Private Limited?",
+    answer:
+      "You can verify our credentials on the MCA (Ministry of Corporate Affairs) portal using our CIN: U62011TS2025OPC208265. Our physical presence at WeWork Rajapushpa Summit in Hyderabad's Financial District also serves as our primary hub for official correspondence.",
+    category: "Legal",
+    keywords: ["verify", "authenticity", "MCA portal", "legal check", "trust"],
   },
 ];
 

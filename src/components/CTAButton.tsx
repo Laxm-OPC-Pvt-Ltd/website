@@ -6,6 +6,8 @@ type Props = {
   href?: string;
   variant?: "primary" | "outline" | "ghost";
   className?: string;
+  target?: string;
+  rel?: string;
 } & Omit<ComponentProps<"button">, "children">;
 
 export default function CTAButton({
@@ -13,6 +15,8 @@ export default function CTAButton({
   href,
   variant = "primary",
   className = "",
+  target,
+  rel,
   ...buttonProps
 }: Props) {
   const base =
@@ -41,7 +45,7 @@ export default function CTAButton({
 
   if (href) {
     return (
-      <Link href={href} className={cls}>
+      <Link href={href} className={cls} target={target} rel={rel}>
         {content}
       </Link>
     );

@@ -349,6 +349,131 @@ export default function About() {
           </div>
         </div>
       </section>
+      {/* Corporate Identity Section */}
+      <section className="py-20 bg-white/50 backdrop-blur-sm border-y border-[var(--border)] relative">
+        <div className="max-w-6xl mx-auto px-6">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-[var(--navy)] mb-4">
+              Corporate <span className="text-[var(--gold)]">Identity</span>
+            </h2>
+            <p className="text-[var(--text-secondary)] text-lg max-w-3xl mx-auto">
+              Building trust through transparency and legal compliance
+            </p>
+          </div>
+          
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            <div className="space-y-6">
+              <div className="bg-white rounded-xl p-8 shadow-lg border border-[var(--border)]">
+                <h3 className="text-xl font-semibold text-[var(--navy)] mb-4">
+                  LAXM (OPC) Private Limited
+                </h3>
+                <div className="space-y-3 text-[var(--text-secondary)]">
+                  <div className="flex items-start gap-3">
+                    <svg className="w-5 h-5 text-[var(--gold)] mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                    </svg>
+                    <div>
+                      <strong>CIN:</strong> U62011TS2025OPC208265
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <svg className="w-5 h-5 text-[var(--gold)] mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                    </svg>
+                    <div>
+                      <strong>Incorporated:</strong> December 2025, Hyderabad, India
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <svg className="w-5 h-5 text-[var(--gold)] mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                    </svg>
+                    <div>
+                      <strong>Registered:</strong> Ministry of Corporate Affairs, Government of India
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <div className="bg-gradient-to-r from-[var(--navy)]/5 to-[var(--gold)]/5 rounded-xl p-6 border border-[var(--gold)]/20">
+                <p className="text-[var(--navy)] leading-relaxed">
+                  We combine the <strong>agility of an OPC</strong> with the <strong>structure of a Private Limited</strong> company to deliver cutting-edge AI/ML technology solutions with enterprise-grade reliability and personal attention to every client partnership.
+                </p>
+              </div>
+            </div>
+            
+            <div className="relative">
+              <div className="absolute inset-0 bg-gradient-to-r from-[var(--gold)]/10 to-[var(--navy)]/10 rounded-2xl transform rotate-3"></div>
+              <div className="relative bg-white rounded-2xl p-8 shadow-xl border border-[var(--border)]">
+                <h4 className="text-2xl font-bold text-[var(--navy)] mb-6">Our Commitment</h4>
+                <ul className="space-y-4">
+                  <li className="flex items-start gap-3">
+                    <span className="w-2 h-2 rounded-full bg-[var(--gold)] mt-2 flex-shrink-0"></span>
+                    <span className="text-[var(--text-secondary)]">Legal compliance and corporate governance</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <span className="w-2 h-2 rounded-full bg-[var(--gold)] mt-2 flex-shrink-0"></span>
+                    <span className="text-[var(--text-secondary)]">Transparent business operations</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <span className="w-2 h-2 rounded-full bg-[var(--gold)] mt-2 flex-shrink-0"></span>
+                    <span className="text-[var(--text-secondary)]">Data privacy and ethical AI practices</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <span className="w-2 h-2 rounded-full bg-[var(--gold)] mt-2 flex-shrink-0"></span>
+                    <span className="text-[var(--text-secondary)]">Long-term client partnerships</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Trust Badges Section */}
+      <section className="py-16 bg-[var(--navy)] text-white relative overflow-hidden">
+        <div className="absolute top-0 left-0 w-full h-full bg-[url('/grid.svg')] opacity-10"></div>
+        <div className="max-w-6xl mx-auto px-6 relative z-10">
+          <div className="text-center mb-12">
+            <h3 className="text-2xl font-bold mb-4">Trust & Compliance</h3>
+            <p className="text-gray-300">Your confidence is our priority</p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="text-center group">
+              <div className="w-20 h-20 mx-auto mb-4 rounded-full bg-white/10 flex items-center justify-center group-hover:bg-[var(--gold)]/20 transition-colors duration-300">
+                <svg className="w-10 h-10 text-[var(--gold)]" fill="currentColor" viewBox="0 0 20 20">
+                  <path fillRule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                </svg>
+              </div>
+              <h4 className="text-lg font-semibold mb-2">Government Registered Entity (MCA)</h4>
+              <p className="text-gray-400 text-sm">Officially registered under Ministry of Corporate Affairs, India</p>
+            </div>
+            
+            <div className="text-center group">
+              <div className="w-20 h-20 mx-auto mb-4 rounded-full bg-white/10 flex items-center justify-center group-hover:bg-[var(--gold)]/20 transition-colors duration-300">
+                <svg className="w-10 h-10 text-[var(--gold)]" fill="currentColor" viewBox="0 0 20 20">
+                  <path fillRule="evenodd" d="M2.166 4.999A11.954 11.954 0 0010 1.944 11.954 11.954 0 0017.834 5c.11.65.166 1.32.166 2.001 0 5.225-3.34 9.67-8 11.317C5.34 16.67 2 12.225 2 7c0-.682.057-1.35.166-2.001zm11.541 3.708a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                </svg>
+              </div>
+              <h4 className="text-lg font-semibold mb-2">Data Privacy & Ethics</h4>
+              <p className="text-gray-400 text-sm">Committed to ethical AI and robust data protection standards</p>
+            </div>
+            
+            <div className="text-center group">
+              <div className="w-20 h-20 mx-auto mb-4 rounded-full bg-white/10 flex items-center justify-center group-hover:bg-[var(--gold)]/20 transition-colors duration-300">
+                <svg className="w-10 h-10 text-[var(--gold)]" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M10 12a2 2 0 100-4 2 2 0 000 4z" />
+                  <path fillRule="evenodd" d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z" clipRule="evenodd" />
+                </svg>
+              </div>
+              <h4 className="text-lg font-semibold mb-2">Transparent Business Operations</h4>
+              <p className="text-gray-400 text-sm">Open communication and clear business practices</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
     </div>
     </>
   );

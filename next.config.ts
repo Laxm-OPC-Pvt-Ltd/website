@@ -44,6 +44,18 @@ const nextConfig: NextConfig = {
     formats: ["image/avif", "image/webp"],
   },
 
+  // Redirect bare domain to www to prevent duplicate-without-canonical issues
+  async redirects() {
+    return [
+      {
+        source: "/:path*",
+        has: [{ type: "host", value: "thelaxm.com" }],
+        destination: "https://www.thelaxm.com/:path*",
+        permanent: true,
+      },
+    ];
+  },
+
   // Add security headers on every response including API routes
   async headers() {
     return [
