@@ -317,7 +317,7 @@ export default function About() {
           <div className="absolute inset-0 grid-overlay opacity-10 pointer-events-none" />
           <div className="max-w-6xl mx-auto px-6 relative z-10">
             <div className="text-center mb-14">
-              <h3 className="text-2xl font-bold text-white mb-3">Trust &amp; Compliance</h3>
+              <h2 className="text-2xl font-bold text-white mb-3">Trust &amp; Compliance</h2>
               <p className="text-white/40 text-sm">Your confidence is our priority</p>
             </div>
 

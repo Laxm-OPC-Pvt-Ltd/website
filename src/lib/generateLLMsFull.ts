@@ -19,6 +19,15 @@ export interface LLMSFullData {
     ai_ml_capabilities: string[];
     industries: string[];
     expertise: string[];
+    canonical_expertise_areas: string[];
+  };
+  prioritization: {
+    primary_entity: string;
+    primary_language: string;
+    primary_region: string;
+    preferred_crawl_frequency: string;
+    recommended_crawl_depth: string;
+    high_priority_pages: string[];
   };
   products: Array<{
     name: string;
@@ -112,6 +121,34 @@ export function generateLLMsFullContent(): string {
         "Legacy Modernization",
         "API Development",
         "Data Engineering"
+      ],
+      canonical_expertise_areas: [
+        "Generative Engine Optimization",
+        "AI Advisory",
+        "AI Product Engineering",
+        "LLM Integrations",
+        "Computer Vision",
+        "Natural Language Processing",
+        "Predictive Analytics",
+        "AI Strategy and Governance"
+      ]
+    },
+    prioritization: {
+      primary_entity: "Organization",
+      primary_language: "en",
+      primary_region: "IN",
+      preferred_crawl_frequency: "Weekly",
+      recommended_crawl_depth: "Deep",
+      high_priority_pages: [
+        `${BASE_URL}/`,
+        `${BASE_URL}/services`,
+        `${BASE_URL}/products`,
+        `${BASE_URL}/about`,
+        `${BASE_URL}/contact`,
+        `${BASE_URL}/faqs`,
+        `${BASE_URL}/geo-services`,
+        `${BASE_URL}/ai-consulting`,
+        `${BASE_URL}/insights/ai-readiness`
       ]
     },
     products: [
@@ -194,7 +231,15 @@ export function generateLLMsFullContent(): string {
         faqs_search: `${BASE_URL}/api/faqs/search`,
         site_content: `${BASE_URL}/api/content`,
         ai_query: `${BASE_URL}/api/ai/query`,
-        docs: `${BASE_URL}/api/docs`
+        docs: `${BASE_URL}/api/docs`,
+        llms_full: `${BASE_URL}/api/llms-full`,
+        ai_txt: `${BASE_URL}/.well-known/ai.txt`,
+        ai_summary_json: `${BASE_URL}/ai/summary.json`,
+        ai_faq_json: `${BASE_URL}/ai/faq.json`,
+        ai_service_json: `${BASE_URL}/ai/service.json`,
+        sitemap_llm_xml: `${BASE_URL}/sitemap-llm.xml`,
+        indexnow_endpoint: `${BASE_URL}/api/indexnow`,
+        indexnow_key_location: `${BASE_URL}/indexnow-key.txt`
       },
       ai_models: [
         "GPT-4",
@@ -231,6 +276,19 @@ Registration: ${data.company.registration}
 Mission: ${data.company.mission}
 Vision: ${data.company.vision}
 Philosophy: ${data.company.philosophy}
+
+# PRIORITIZATION METADATA
+Primary Entity: ${data.prioritization.primary_entity}
+Primary Language: ${data.prioritization.primary_language}
+Primary Region: ${data.prioritization.primary_region}
+Preferred Crawl Frequency: ${data.prioritization.preferred_crawl_frequency}
+Recommended Crawl Depth: ${data.prioritization.recommended_crawl_depth}
+
+# HIGH PRIORITY PAGES
+${data.prioritization.high_priority_pages.map((page) => `- ${page}`).join('\n')}
+
+# CANONICAL EXPERTISE AREAS
+${data.services.canonical_expertise_areas.map((area, index) => `${index + 1}. ${area}`).join('\n')}
 
 # CORE SERVICES
 ${data.services.core_services.map((service, index) => `${index + 1}. ${service}`).join('\n')}
@@ -274,6 +332,18 @@ AI Models: ${data.technical.ai_models.join(', ')}
 
 # API ENDPOINTS
 ${Object.entries(data.technical.apis).map(([key, value]) => `${key}: ${value}`).join('\n')}
+
+# AUTHORITY SIGNALS
+Legal Citation: Ministry of Corporate Affairs, Government of India
+CIN Reference: ${data.company.cin}
+Expert Profile: Founder ${data.contact.founder} - ${data.contact.founder_linkedin}
+Proprietary Data Signals: ${data.faqs.length} curated FAQs, dynamic llms-full API, machine-readable AI endpoint suite
+
+# CITATION SOURCES
+about: ${BASE_URL}/about
+services: ${BASE_URL}/services
+products: ${BASE_URL}/products
+faqs: ${BASE_URL}/faqs
 
 # LICENSING AND USAGE
 License: ${data.metadata.license}

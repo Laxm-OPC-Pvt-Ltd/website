@@ -4,6 +4,7 @@ import { posts } from "@/data/posts";
 const routes = [
   "",
   "/about",
+  "/ai-assistant",
   "/contact",
   "/services",
   "/products",
@@ -14,6 +15,13 @@ const routes = [
   "/terms-of-service",
   "/terms-and-conditions",
   "/refund-policy",
+  "/llms.txt",
+  "/llms-full.txt",
+  "/.well-known/ai.txt",
+  "/ai/summary.json",
+  "/ai/faq.json",
+  "/ai/service.json",
+  "/sitemap-llm.xml",
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -23,8 +31,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const staticRoutes = routes.map((route) => ({
     url: `${base}${route}`,
     lastModified: now,
-    changeFrequency: "weekly" as const,
-    priority: route === "" ? 1 : 0.7,
+    changeFrequency: route === "" ? ("daily" as const) : ("weekly" as const),
+    priority: route === "" ? 1 : route.startsWith("/ai/") || route.includes("llm") ? 0.8 : 0.7,
   }));
 
   const blogRoutes = posts.map((post) => ({
