@@ -22,6 +22,8 @@ export async function GET() {
       authoritySignals: {
         legalIdentity: {
           cin: "U62011TS2025OPC208265",
+          dpiit: "DIPP260676",
+          duns: "771939377",
           registrationAuthority: "Ministry of Corporate Affairs, Government of India",
           incorporated: "2025-12-01",
         },

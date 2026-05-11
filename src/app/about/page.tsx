@@ -269,6 +269,8 @@ export default function About() {
                   <div className="space-y-4 text-sm text-white/60">
                     {[
                       ["CIN", "U62011TS2025OPC208265"],
+                      ["DPIIT", "DIPP260676 (DPIIT Recognized)"],
+                      ["DUNS", "771939377"],
                       ["Incorporated", "December 2025, Hyderabad, India"],
                       ["Registered", "Ministry of Corporate Affairs, Government of India"],
                     ].map(([label, value]) => (

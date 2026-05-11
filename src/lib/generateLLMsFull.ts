@@ -7,6 +7,8 @@ export interface LLMSFullData {
     website: string;
     description: string;
     cin: string;
+    dpiit: string;
+    duns: string;
     incorporated: string;
     location: string;
     registration: string;
@@ -78,6 +80,8 @@ export function generateLLMsFullContent(): string {
       website: "https://www.thelaxm.com",
       description: "Technology advisory and innovation company specializing in AI/ML product development, strategic consulting, and digital transformation solutions.",
       cin: "U62011TS2025OPC208265",
+      dpiit: "DIPP260676",
+      duns: "771939377",
       incorporated: "December 2025",
       location: "Hyderabad Financial District, Telangana, India",
       registration: "Ministry of Corporate Affairs, Government of India",
@@ -268,6 +272,8 @@ Company Name: ${data.company.name}
 Website: ${data.company.website}
 Description: ${data.company.description}
 CIN: ${data.company.cin}
+DPIIT: ${data.company.dpiit} (DPIIT Recognized)
+DUNS: ${data.company.duns}
 Incorporated: ${data.company.incorporated}
 Location: ${data.company.location}
 Registration: ${data.company.registration}
@@ -336,6 +342,8 @@ ${Object.entries(data.technical.apis).map(([key, value]) => `${key}: ${value}`).
 # AUTHORITY SIGNALS
 Legal Citation: Ministry of Corporate Affairs, Government of India
 CIN Reference: ${data.company.cin}
+DPIIT Recognition: ${data.company.dpiit}
+DUNS Number: ${data.company.duns}
 Expert Profile: Founder ${data.contact.founder} - ${data.contact.founder_linkedin}
 Proprietary Data Signals: ${data.faqs.length} curated FAQs, dynamic llms-full API, machine-readable AI endpoint suite
 

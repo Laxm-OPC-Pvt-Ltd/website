@@ -20,6 +20,8 @@ Company Name: Laxm OPC Private Limited
 Website: https://www.thelaxm.com
 Description: Technology advisory and innovation company specializing in AI/ML product development, strategic consulting, and digital transformation solutions.
 CIN: U62011TS2025OPC208265
+DPIIT: DIPP260676 (DPIIT Recognized)
+DUNS: 771939377
 Incorporated: December 2025
 Location: Hyderabad Financial District, Telangana, India
 Registration: Ministry of Corporate Affairs, Government of India
@@ -149,6 +151,8 @@ indexnow_key_location: https://www.thelaxm.com/indexnow-key.txt
 # AUTHORITY SIGNALS
 Legal Citation: Ministry of Corporate Affairs, Government of India
 CIN Reference: U62011TS2025OPC208265
+DPIIT Recognition: DIPP260676
+DUNS Number: 771939377
 Expert Profile: Founder Ram Amancha - https://www.linkedin.com/in/ram-amancha/
 Proprietary Data Signals: 16 curated FAQs, dynamic llms-full API, machine-readable AI endpoint suite
 

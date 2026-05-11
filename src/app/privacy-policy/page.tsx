@@ -22,7 +22,7 @@ export default function PrivacyPolicy() {
     <section className="mx-auto max-w-4xl px-6 py-16">
        <h1 className="text-3xl font-bold">Privacy Policy</h1>
        <p className="mt-4 text-zinc-700">
-         Effective date: <time dateTime="2025-12-21">21 Dec 2025</time>
+         Effective date: <time dateTime="2026-05-09">09 May 2026</time>
        </p>
        <p className="mt-4 text-zinc-700">
          Laxm OPC Private Limited ("Laxm", "we", "our", "us") is committed to

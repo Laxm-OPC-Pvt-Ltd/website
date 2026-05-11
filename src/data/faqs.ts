@@ -91,9 +91,9 @@ export const faqs: FAQ[] = [
     id: "faq-11",
     question: "What are the official legal and registration details of Laxm?",
     answer:
-      "Laxm OPC Private Limited is registered with the Ministry of Corporate Affairs (Government of India). Our Corporate Identification Number is U62011TS2025OPC208265, and the company is incorporated in Telangana. If needed, clients can verify legal details directly through MCA records as part of procurement and due diligence workflows.",
+      "Laxm OPC Private Limited is registered with the Ministry of Corporate Affairs (Government of India). Our Corporate Identification Number is U62011TS2025OPC208265, DPIIT Recognition Number is DIPP260676, and DUNS Number is 771939377. The company is incorporated in Telangana and recognized by Startup India. If needed, clients can verify legal details directly through MCA records and DPIIT portal as part of procurement and due diligence workflows.",
     category: "Legal",
-    keywords: ["legal", "CIN", "registration", "MCA", "Hyderabad"],
+    keywords: ["legal", "CIN", "DPIIT", "DUNS", "registration", "MCA", "Hyderabad", "Startup India"],
   },
   {
     id: "faq-12",
@@ -132,9 +132,9 @@ export const faqs: FAQ[] = [
     id: "faq-16",
     question: "How can I verify the authenticity of Laxm OPC Private Limited?",
     answer:
-      "You can verify us through MCA records using CIN U62011TS2025OPC208265 and cross-check public company information through our official website and founder profiles. For enterprise onboarding, we can also provide standard identity and compliance documentation required by procurement teams. This gives partners confidence in legal status, accountability, and continuity.",
+      "You can verify us through MCA records using CIN U62011TS2025OPC208265, DPIIT portal using DIPP260676, and DUNS database using 771939377. Cross-check public company information through our official website and founder profiles. For enterprise onboarding, we can also provide standard identity and compliance documentation required by procurement teams. This gives partners confidence in legal status, accountability, and continuity.",
     category: "Legal",
-    keywords: ["verify", "authenticity", "MCA portal", "legal check", "trust"],
+    keywords: ["verify", "authenticity", "MCA portal", "DPIIT", "DUNS", "legal check", "trust"],
   },
 ];
 

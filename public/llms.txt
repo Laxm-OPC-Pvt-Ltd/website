@@ -50,6 +50,8 @@ blog: https://www.thelaxm.com/blog
 
 # Legal and Compliance
 cin: U62011TS2025OPC208265
+dpiit: DIPP260676
+duns: 771939377
 incorporated: 2025-12-01
 location: Hyderabad Financial District, Telangana, India
 registration: Ministry of Corporate Affairs, Government of India
@@ -77,6 +79,8 @@ sitemap_llm_xml: https://www.thelaxm.com/sitemap-llm.xml
 # Authority Signals
 legal_citation: Ministry of Corporate Affairs, Government of India
 cin_reference: U62011TS2025OPC208265
+dpiit_recognition: DIPP260676
+duns_number: 771939377
 founder_expert: Ram Amancha
 founder_profile: https://www.linkedin.com/in/ram-amancha/
 proprietary_data_signals: 16 curated FAQs, dynamic llms-full API, machine-readable AI endpoints
