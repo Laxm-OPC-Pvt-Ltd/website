@@ -2,10 +2,9 @@ import type { MetadataRoute } from "next";
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: "Laxm",
-    short_name: "Laxm",
-    description:
-      "Premium, direction-driven, value-focused advisory, consulting, innovation and custom solutions.",
+    name: "laxm",
+    short_name: "laxm",
+    description: "Direction-driven, value-focused advisory, consulting, innovation and custom solutions.",
     start_url: "/",
     display: "standalone",
     background_color: "#F7F6F2",

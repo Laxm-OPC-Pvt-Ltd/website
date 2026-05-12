@@ -94,23 +94,22 @@ function FAQItem({
       initial={{ opacity: 0, y: 10 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.3, delay: Math.min(index * 0.04, 0.3) }}
-      className={`rounded-xl border transition-colors duration-200 overflow-hidden ${
-        isOpen
+      className={`rounded-xl border transition-colors duration-200 overflow-hidden ${isOpen
           ? "border-[var(--gold)]/35 bg-white/[0.06]"
           : "border-white/[0.08] bg-white/[0.03] hover:border-white/[0.15]"
-      }`}
+        }`}
     >
       <button
         onClick={onToggle}
+        area-label={`Toggle answer for question: ${faq.question}`}
         className="w-full text-left px-6 py-5 flex items-center gap-4 group"
       >
         <span className="text-xs font-mono text-[var(--gold)]/40 w-6 flex-shrink-0 select-none tabular-nums">
           {String(index + 1).padStart(2, "0")}
         </span>
         <span
-          className={`flex-1 text-[0.9375rem] font-medium leading-snug transition-colors ${
-            isOpen ? "text-white" : "text-white/75 group-hover:text-white"
-          }`}
+          className={`flex-1 text-[0.9375rem] font-medium leading-snug transition-colors ${isOpen ? "text-white" : "text-white/75 group-hover:text-white"
+            }`}
         >
           {faq.question}
         </span>
@@ -271,11 +270,11 @@ export default function FAQClient({ jsonLd }: FAQClientProps) {
                   <button
                     key={cat}
                     onClick={() => handleCategoryChange(cat)}
-                    className={`px-4 py-1.5 rounded-full text-sm font-medium transition-all duration-200 ${
-                      selectedCategory === cat
+                    aria-label={`Filter FAQs by category: ${cat}`}
+                    className={`px-4 py-1.5 rounded-full text-sm font-medium transition-all duration-200 ${selectedCategory === cat
                         ? "bg-[var(--gold)] text-[var(--navy)] shadow-lg shadow-[var(--gold)]/20"
                         : "bg-white/[0.06] border border-white/[0.10] text-white/50 hover:border-[var(--gold)]/40 hover:text-white/80"
-                    }`}
+                      }`}
                   >
                     {cat}
                   </button>
@@ -332,6 +331,7 @@ export default function FAQClient({ jsonLd }: FAQClientProps) {
                   </p>
                   <button
                     onClick={() => setSearchQuery("")}
+                    aria-label="Clear search query and show all FAQs"
                     className="text-[var(--gold)] hover:underline text-sm"
                   >
                     Clear search

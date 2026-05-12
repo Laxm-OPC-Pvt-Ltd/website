@@ -457,7 +457,7 @@ export default function ContactForm() {
       </div>
 
       <div className="flex justify-start">
-        <CTAButton type="submit" className="w-full justify-center">
+        <CTAButton type="submit" className="w-full justify-center" variant="primary" aria-label="Submit contact form">
           Send Message
         </CTAButton>
       </div>

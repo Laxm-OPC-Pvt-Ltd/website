@@ -246,10 +246,10 @@ export default function RootLayout({
             <div className="space-y-6">
               <div className="flex items-center gap-3">
                 <Logo size={40} alt="Laxm logo" />
-                <span className="text-2xl font-bold text-white">Laxm</span>
+                <span className="text-2xl font-bold text-white">LAXM</span>
               </div>
               <p className="text-sm leading-relaxed max-w-xs text-white/70">
-                Premium. Direction‑driven. Value‑focused.
+                Direction‑driven. Value‑focused.
                 <br />
                 Turning ambition into measurable impact.
               </p>
@@ -383,7 +383,7 @@ export default function RootLayout({
                   placeholder="Enter your email"
                   className="bg-white/5 border border-white/10 rounded-lg px-4 py-2.5 text-sm w-full focus:outline-none focus:border-[var(--gold)] focus:ring-1 focus:ring-[var(--gold)] transition-all placeholder:text-white/30 text-white"
                 />
-                <button className="bg-[var(--gold)] text-[var(--navy)] px-4 py-2.5 rounded-lg text-sm font-bold hover:brightness-110 transition-all shadow-lg shadow-[var(--gold)]/20">
+                <button className="bg-[var(--gold)] text-[var(--navy)] px-4 py-2.5 rounded-lg text-sm font-bold hover:brightness-110 transition-all shadow-lg shadow-[var(--gold)]/20" aria-label="Subscribe to newsletter">
                   Go
                 </button>
               </div>

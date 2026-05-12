@@ -42,13 +42,14 @@ export default function BlogIndex() {
 
           {/* Category Filter */}
           <div className="flex flex-wrap justify-center gap-3 mb-12">
-            <button className="px-6 py-2 bg-[var(--gold)] text-black rounded-full font-semibold hover:bg-yellow-400 transition-colors">
+            <button className="px-6 py-2 bg-[var(--gold)] text-black rounded-full font-semibold hover:bg-yellow-400 transition-colors" aria-label="Filter articles by all categories">
               All Articles
             </button>
             {categories.map((category) => (
               <button
                 key={category}
                 className="px-6 py-2 bg-slate-800 text-gray-200 rounded-full hover:bg-slate-700 transition-colors border border-slate-700"
+                area-label={`Filter articles by ${category}`}
               >
                 {category}
               </button>

@@ -94,16 +94,14 @@ export default function AIChat() {
         {messages.map((message) => (
           <div
             key={message.id}
-            className={`flex ${
-              message.type === "user" ? "justify-end" : "justify-start"
-            }`}
+            className={`flex ${message.type === "user" ? "justify-end" : "justify-start"
+              }`}
           >
             <div
-              className={`max-w-xs lg:max-w-md px-4 py-3 rounded-lg ${
-                message.type === "user"
+              className={`max-w-xs lg:max-w-md px-4 py-3 rounded-lg ${message.type === "user"
                   ? "bg-[var(--gold)] text-black rounded-br-none"
                   : "bg-slate-800 text-white rounded-bl-none"
-              }`}
+                }`}
             >
               <p className="text-sm">{message.content}</p>
               {message.sources && message.sources.length > 0 && (
@@ -152,6 +150,7 @@ export default function AIChat() {
           <button
             type="submit"
             disabled={isLoading || !input.trim()}
+            aria-label="Send message"
             className="px-6 py-2 bg-[var(--gold)] text-black font-semibold rounded hover:bg-yellow-400 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
           >
             Send

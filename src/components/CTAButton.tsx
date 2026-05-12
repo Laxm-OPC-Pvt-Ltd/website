@@ -21,7 +21,7 @@ export default function CTAButton({
 }: Props) {
   const base =
     "group relative inline-flex items-center justify-center rounded-full px-8 py-3 text-sm font-semibold transition-all duration-300 active:scale-95";
-
+  const accessibleName = buttonProps["aria-label"] || (typeof children === "string" ? children : undefined);
   const variants: Record<string, string> = {
     primary:
       "bg-gradient-to-r from-[var(--gold)] to-[var(--gold-dark)] text-white shadow-lg shadow-[var(--gold)]/25 hover:shadow-[var(--gold)]/40 hover:brightness-110",
@@ -51,7 +51,7 @@ export default function CTAButton({
     );
   }
   return (
-    <button className={cls} {...buttonProps}>
+    <button className={cls} aria-label={accessibleName} {...buttonProps}>
       {content}
     </button>
   );

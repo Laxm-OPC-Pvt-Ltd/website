@@ -335,6 +335,7 @@ export function ProjectConfigurator() {
                       return (
                         <motion.button
                           key={service.id}
+                          aria-label={service.name}
                           className={cn(cardBase, "p-5", selected ? cardSelected : cardDefault)}
                           style={selected ? { background: "rgba(212,175,55,0.07)" } : { background: "rgba(255,255,255,0.02)" }}
                           whileHover={{ scale: 1.015 }}
@@ -383,6 +384,7 @@ export function ProjectConfigurator() {
                       return (
                         <motion.button
                           key={industry.id}
+                          aria-label={industry.name}
                           className={cn(cardBase, "p-4 text-center", selected ? cardSelected : cardDefault)}
                           style={selected ? { background: "rgba(212,175,55,0.07)" } : { background: "rgba(255,255,255,0.02)" }}
                           whileHover={{ scale: 1.03 }}
@@ -432,6 +434,7 @@ export function ProjectConfigurator() {
                     return (
                       <motion.button
                         key={timeline.id}
+                        aria-label={timeline.name}
                         className={cn(cardBase, "p-5", selected ? cardSelected : cardDefault)}
                         style={selected ? { background: "rgba(212,175,55,0.07)" } : { background: "rgba(255,255,255,0.02)" }}
                         whileHover={{ scale: 1.01, x: 4 }}
@@ -498,6 +501,7 @@ export function ProjectConfigurator() {
                       return (
                         <motion.button
                           key={budget.id}
+                          aria-label={budget.name}
                           className={cn(cardBase, "p-5", selected ? cardSelected : cardDefault)}
                           style={selected ? { background: "rgba(212,175,55,0.07)" } : { background: "rgba(255,255,255,0.02)" }}
                           whileHover={{ scale: 1.015 }}
@@ -791,6 +795,7 @@ export function ProjectConfigurator() {
               >
                 <button
                   onClick={prevStep}
+                  area-label="Go back to previous step"
                   disabled={step === 1}
                   className={cn(
                     "inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-medium transition-all duration-200",
@@ -806,6 +811,7 @@ export function ProjectConfigurator() {
                 {step < totalSteps ? (
                   <button
                     onClick={nextStep}
+                    area-label="Go to next step"
                     disabled={
                       (step === 1 && !projectData.service) ||
                       (step === 2 && !projectData.industry) ||
@@ -825,6 +831,7 @@ export function ProjectConfigurator() {
                 ) : (
                   <button
                     onClick={handleSubmit}
+                    area-label="Submit project brief"
                     disabled={
                       isSubmitting ||
                       !projectData.contact.name ||

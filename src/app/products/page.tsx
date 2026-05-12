@@ -154,11 +154,12 @@ export default function Products() {
                       className="flex-1 justify-center"
                       target="_blank"
                       rel="noopener noreferrer"
+                      aria-label={`Explore ${product.title} on its official site`}
                     >
                       {product.cta}
                     </CTAButton>
                   ) : (
-                    <CTAButton href="/contact" variant="primary" className="flex-1 justify-center">
+                    <CTAButton href="/contact" variant="primary" className="flex-1 justify-center" aria-label={`Request a demo for ${product.title}`}>
                       {product.cta}
                     </CTAButton>
                   )}
@@ -166,6 +167,7 @@ export default function Products() {
                     href="/contact"
                     variant="outline"
                     className="flex-1 justify-center text-white border-white/20 hover:bg-white/10"
+                    aria-label={`Request more information about ${product.title}`}
                   >
                     Learn More
                   </CTAButton>
@@ -186,8 +188,8 @@ export default function Products() {
             Let&apos;s discuss how our products can accelerate your roadmap and deliver measurable ROI.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <CTAButton href="/contact" variant="primary">Request a Demo</CTAButton>
-            <CTAButton href="/services" variant="outline" className="text-white border-white/25 hover:bg-white/10">
+            <CTAButton href="/contact" variant="primary" aria-label="Request a Demo">Request a Demo</CTAButton>
+            <CTAButton href="/services" variant="outline" className="text-white border-white/25 hover:bg-white/10" aria-label="View Services">
               View Services
             </CTAButton>
           </div>

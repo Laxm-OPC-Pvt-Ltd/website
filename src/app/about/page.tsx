@@ -365,8 +365,8 @@ export default function About() {
               Let&apos;s discuss your goals and how Laxm can help you achieve them.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <CTAButton href="/contact" variant="primary">Get in Touch</CTAButton>
-              <CTAButton href="/services" variant="outline" className="text-white border-white/25 hover:bg-white/10">
+              <CTAButton href="/contact" variant="primary" aria-label="Get in Touch">Get in Touch</CTAButton>
+              <CTAButton href="/services" variant="outline" className="text-white border-white/25 hover:bg-white/10" aria-label="View Services">
                 Our Services
               </CTAButton>
             </div>

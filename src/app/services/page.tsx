@@ -182,8 +182,8 @@ export default function Services() {
             Let&apos;s start with a 30-minute strategy call — no obligations, no sales pitch.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <CTAButton href="/contact" variant="primary">Get in Touch</CTAButton>
-            <CTAButton href="/products" variant="outline" className="text-white border-white/25 hover:bg-white/10">
+            <CTAButton href="/contact" variant="primary" aria-label="Get in Touch">Get in Touch</CTAButton>
+            <CTAButton href="/products" variant="outline" className="text-white border-white/25 hover:bg-white/10" aria-label="View Products">
               View Products
             </CTAButton>
           </div>
