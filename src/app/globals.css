@@ -271,3 +271,106 @@ h1, h2, h3, h4, h5, h6 {
   0%   { background-position: 200% 0; }
   100% { background-position: -200% 0; }
 }
+
+/* ─── Rich Text (Blog + Admin Editor) ───────────────────────── */
+
+.richtext {
+  color: var(--foreground);
+}
+
+.richtext :where(article) {
+  color: inherit;
+}
+
+.richtext :where(section) {
+  margin-top: 2rem;
+}
+
+.richtext :where(section:first-child) {
+  margin-top: 0;
+}
+
+.richtext :where(h1) {
+  font-size: 2.25rem;
+  line-height: 1.15;
+  font-weight: 800;
+  margin: 2.25rem 0 1rem;
+  color: #ffffff;
+}
+
+.richtext :where(h2) {
+  font-size: 1.875rem;
+  line-height: 1.2;
+  font-weight: 800;
+  margin: 2rem 0 0.75rem;
+  color: #ffffff;
+}
+
+.richtext :where(h3) {
+  font-size: 1.5rem;
+  line-height: 1.25;
+  font-weight: 700;
+  margin: 1.5rem 0 0.5rem;
+  color: #ffffff;
+}
+
+.richtext :where(p) {
+  margin: 0 0 1.25rem;
+  line-height: 1.85;
+  color: #d1d5db;
+}
+
+.richtext :where(p:empty) {
+  min-height: 1.25em;
+}
+
+.richtext :where(a) {
+  color: var(--gold);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.richtext :where(ul, ol) {
+  margin: 0 0 1.25rem;
+  padding-left: 1.5rem;
+  color: #d1d5db;
+}
+
+.richtext :where(li) {
+  margin: 0.35rem 0;
+}
+
+.richtext :where(blockquote) {
+  margin: 1.25rem 0;
+  padding: 0.75rem 1rem;
+  border-left: 4px solid var(--gold);
+  background: rgba(15, 23, 42, 0.35);
+  color: #e5e7eb;
+}
+
+.richtext :where(hr) {
+  border: 0;
+  border-top: 1px solid rgba(148, 163, 184, 0.25);
+  margin: 2rem 0;
+}
+
+.richtext :where(code) {
+  color: var(--gold);
+  background: rgba(30, 41, 59, 0.55);
+  padding: 0.15rem 0.4rem;
+  border-radius: 0.35rem;
+}
+
+.richtext :where(pre) {
+  margin: 1.25rem 0;
+  padding: 1rem;
+  background: rgba(30, 41, 59, 0.7);
+  border: 1px solid rgba(148, 163, 184, 0.2);
+  border-radius: 0.75rem;
+  overflow-x: auto;
+}
+
+.richtext :where(pre code) {
+  background: transparent;
+  padding: 0;
+}

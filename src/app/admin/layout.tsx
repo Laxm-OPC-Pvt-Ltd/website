@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Admin",
-  description: "Client-side admin for managing blog content locally.",
+  description: "Admin CMS for managing blog posts.",
   robots: { index: false, follow: false },
 };
 

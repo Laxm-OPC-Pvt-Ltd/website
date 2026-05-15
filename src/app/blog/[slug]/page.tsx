@@ -175,18 +175,8 @@ export default async function PostPage({ params }: Props) {
       {/* Content */}
       <article className="py-16 px-6">
         <div className="max-w-4xl mx-auto">
-          <div className="prose prose-invert max-w-none text-white
-            prose-headings:text-white prose-headings:font-bold prose-headings:mt-8 prose-headings:mb-4
-            prose-p:text-gray-300 prose-p:leading-relaxed prose-p:mb-6
-            prose-a:text-[var(--gold)] prose-a:no-underline hover:prose-a:text-yellow-400 hover:prose-a:underline
-            prose-strong:text-white
-            prose-li:text-gray-300
-            prose-li:marker:text-[var(--gold)]
-            prose-code:text-[var(--gold)] prose-code:bg-slate-800/50 prose-code:px-2 prose-code:py-1 prose-code:rounded
-            prose-blockquote:border-l-[var(--gold)] prose-blockquote:bg-slate-800/30 prose-blockquote:py-3 prose-blockquote:px-4 prose-blockquote:not-italic prose-blockquote:text-gray-200
-            prose-pre:bg-slate-800 prose-pre:border prose-pre:border-slate-700
-            prose-hr:border-slate-700
-          "
+          <div
+            className="richtext max-w-none"
             dangerouslySetInnerHTML={{ __html: post.contentHtml }}
           />
 

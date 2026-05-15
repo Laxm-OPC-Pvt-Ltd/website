@@ -3,6 +3,8 @@ import { posts } from "@/data/posts";
 import type { Metadata } from "next";
 import { canonicalUrl } from "@/lib/metadata";
 
+const POSTS_PER_PAGE = 6;
+
 export const metadata: Metadata = {
   title: "Blog - Laxm",
   description:
@@ -20,9 +22,29 @@ export const metadata: Metadata = {
   },
 };
 
-export default function BlogIndex() {
-  const featuredPosts = posts.filter((post) => post.featured);
-  const regularPosts = posts.filter((post) => !post.featured);
+type BlogIndexProps = {
+  searchParams?: Promise<{
+    page?: string | string[];
+  }>;
+};
+
+export default async function BlogIndex({ searchParams }: BlogIndexProps) {
+  const resolvedSearchParams = await searchParams;
+  const rawPage = Array.isArray(resolvedSearchParams?.page)
+    ? resolvedSearchParams?.page[0]
+    : resolvedSearchParams?.page;
+  const allPosts = [...posts].sort(
+    (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime(),
+  );
+  const featuredPosts = allPosts.filter((post) => post.featured).slice(0, 3);
+  const requestedPage = Number.parseInt(rawPage ?? "1", 10);
+  const totalPages = Math.max(1, Math.ceil(allPosts.length / POSTS_PER_PAGE));
+  const currentPage =
+    Number.isFinite(requestedPage) && requestedPage > 0
+      ? Math.min(Math.floor(requestedPage), totalPages)
+      : 1;
+  const startIndex = (currentPage - 1) * POSTS_PER_PAGE;
+  const paginatedPosts = allPosts.slice(startIndex, startIndex + POSTS_PER_PAGE);
   const categories = Array.from(new Set(posts.map((p) => p.category)));
 
   return (
@@ -40,19 +62,18 @@ export default function BlogIndex() {
             </p>
           </div>
 
-          {/* Category Filter */}
+          {/* Category List */}
           <div className="flex flex-wrap justify-center gap-3 mb-12">
-            <button className="px-6 py-2 bg-[var(--gold)] text-black rounded-full font-semibold hover:bg-yellow-400 transition-colors" aria-label="Filter articles by all categories">
+            <span className="px-6 py-2 bg-[var(--gold)] text-black rounded-full font-semibold">
               All Articles
-            </button>
+            </span>
             {categories.map((category) => (
-              <button
+              <span
                 key={category}
-                className="px-6 py-2 bg-slate-800 text-gray-200 rounded-full hover:bg-slate-700 transition-colors border border-slate-700"
-                area-label={`Filter articles by ${category}`}
+                className="px-6 py-2 bg-slate-800 text-gray-200 rounded-full border border-slate-700"
               >
                 {category}
-              </button>
+              </span>
             ))}
           </div>
         </div>
@@ -62,8 +83,11 @@ export default function BlogIndex() {
       {featuredPosts.length > 0 && (
         <section className="py-16 px-6">
           <div className="mx-auto max-w-6xl">
-            <h2 className="text-3xl font-bold text-white mb-12">Featured Articles</h2>
-            <div className="grid md:grid-cols-2 gap-8">
+            <div className="flex items-center justify-between mb-12 gap-4">
+              <h2 className="text-3xl font-bold text-white">Featured Articles</h2>
+              <p className="text-sm text-gray-400">Top {featuredPosts.length}</p>
+            </div>
+            <div className="grid md:grid-cols-3 gap-8">
               {featuredPosts.map((post) => (
                 <Link href={`/blog/${post.slug}`} key={post.slug}>
                   <div className="group h-full bg-gradient-to-br from-slate-800 to-slate-900 border border-slate-700 rounded-lg overflow-hidden hover:border-[var(--gold)] hover:shadow-lg hover:shadow-[var(--gold)]/20 transition-all duration-300 cursor-pointer">
@@ -74,10 +98,10 @@ export default function BlogIndex() {
                         </span>
                         <span className="text-xs text-gray-400">{post.readingTime} min read</span>
                       </div>
-                      <h3 className="text-2xl font-bold text-white mb-3 group-hover:text-[var(--gold)] transition-colors">
+                      <h3 className="text-2xl font-bold text-white mb-3 group-hover:text-[var(--gold)] transition-colors line-clamp-2">
                         {post.title}
                       </h3>
-                      <p className="text-gray-300 mb-6 flex-grow line-clamp-2">{post.excerpt}</p>
+                      <p className="text-gray-300 mb-6 flex-grow line-clamp-3">{post.excerpt}</p>
                       <div className="flex items-center justify-between">
                         <span className="text-xs text-gray-400">{post.date}</span>
                         <span className="inline-flex items-center text-[var(--gold)] group-hover:translate-x-2 transition-transform">
@@ -96,9 +120,14 @@ export default function BlogIndex() {
       {/* All Posts Grid */}
       <section className="py-16 px-6">
         <div className="mx-auto max-w-6xl">
-          <h2 className="text-3xl font-bold text-white mb-12">All Articles</h2>
+          <div className="flex items-center justify-between mb-12 gap-4">
+            <h2 className="text-3xl font-bold text-white">All Articles</h2>
+            <p className="text-sm text-gray-400">
+              Showing {startIndex + 1}-{Math.min(startIndex + paginatedPosts.length, allPosts.length)} of {allPosts.length}
+            </p>
+          </div>
           <div className="grid md:grid-cols-3 gap-6">
-            {regularPosts.map((post) => (
+            {paginatedPosts.map((post) => (
               <Link href={`/blog/${post.slug}`} key={post.slug}>
                 <div className="group h-full bg-slate-800/50 border border-slate-700 rounded-lg overflow-hidden hover:border-[var(--gold)] hover:bg-slate-800 transition-all duration-300 cursor-pointer">
                   <div className="p-6 h-full flex flex-col">
@@ -127,6 +156,60 @@ export default function BlogIndex() {
               </Link>
             ))}
           </div>
+
+          {totalPages > 1 && (
+            <nav
+              className="mt-12 flex flex-wrap items-center justify-center gap-2"
+              aria-label="Blog pagination"
+            >
+              <Link
+                href={currentPage > 1 ? `/blog?page=${currentPage - 1}` : "/blog?page=1"}
+                aria-disabled={currentPage === 1}
+                className={`px-4 py-2 rounded-md border text-sm transition-colors ${
+                  currentPage === 1
+                    ? "pointer-events-none border-slate-800 text-slate-600"
+                    : "border-slate-600 text-gray-200 hover:border-[var(--gold)] hover:text-[var(--gold)]"
+                }`}
+              >
+                Previous
+              </Link>
+
+              {Array.from({ length: totalPages }, (_, idx) => idx + 1).map((pageNumber) => {
+                const isActive = pageNumber === currentPage;
+
+                return (
+                  <Link
+                    key={pageNumber}
+                    href={`/blog?page=${pageNumber}`}
+                    aria-current={isActive ? "page" : undefined}
+                    className={`min-w-10 px-3 py-2 text-center rounded-md border text-sm transition-colors ${
+                      isActive
+                        ? "border-[var(--gold)] bg-[var(--gold)] text-black font-semibold"
+                        : "border-slate-600 text-gray-200 hover:border-[var(--gold)] hover:text-[var(--gold)]"
+                    }`}
+                  >
+                    {pageNumber}
+                  </Link>
+                );
+              })}
+
+              <Link
+                href={
+                  currentPage < totalPages
+                    ? `/blog?page=${currentPage + 1}`
+                    : `/blog?page=${totalPages}`
+                }
+                aria-disabled={currentPage === totalPages}
+                className={`px-4 py-2 rounded-md border text-sm transition-colors ${
+                  currentPage === totalPages
+                    ? "pointer-events-none border-slate-800 text-slate-600"
+                    : "border-slate-600 text-gray-200 hover:border-[var(--gold)] hover:text-[var(--gold)]"
+                }`}
+              >
+                Next
+              </Link>
+            </nav>
+          )}
         </div>
       </section>
 
