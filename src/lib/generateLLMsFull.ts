@@ -72,22 +72,26 @@ export interface LLMSFullData {
  * Pulls real-time data from all website sources
  */
 export function generateLLMsFullContent(): string {
-  const currentDate = new Date().toISOString().split('T')[0];
-  
+  const currentDate = new Date().toISOString().split("T")[0];
+
   const data: LLMSFullData = {
     company: {
       name: "Laxm OPC Private Limited",
       website: "https://www.thelaxm.com",
-      description: "Technology advisory and innovation company specializing in AI/ML product development, strategic consulting, and digital transformation solutions.",
+      description:
+        "Technology advisory and innovation company specializing in AI/ML product development, strategic consulting, and digital transformation solutions.",
       cin: "U62011TS2025OPC208265",
       dpiit: "DIPP260676",
       duns: "771939377",
       incorporated: "December 2025",
       location: "Hyderabad Financial District, Telangana, India",
       registration: "Ministry of Corporate Affairs, Government of India",
-      mission: "We exist to help leaders and organizations translate ideas into action by providing expert guidance, proven methodologies, and disciplined execution systems that align goals with outcomes.",
-      vision: "To empower businesses, professionals, and innovators with the clarity, strategy, and execution mechanisms needed to achieve their highest goals — turning ambitious aims into measurable impact.",
-      philosophy: "\"Lakshyam\" (Sanskrit) means \"aim\" or \"target\" - we transform abstract ideas into actionable plans and measurable outcomes."
+      mission:
+        "We exist to help leaders and organizations translate ideas into action by providing expert guidance, proven methodologies, and disciplined execution systems that align goals with outcomes.",
+      vision:
+        "To empower businesses, professionals, and innovators with the clarity, strategy, and execution mechanisms needed to achieve their highest goals — turning ambitious aims into measurable impact.",
+      philosophy:
+        '"Lakshyam" (Sanskrit) means "aim" or "target" - we transform abstract ideas into actionable plans and measurable outcomes.',
     },
     services: {
       core_services: [
@@ -96,7 +100,7 @@ export function generateLLMsFullContent(): string {
         "Strategic Consulting",
         "Innovation Acceleration",
         "IT Consulting",
-        "Digital Transformation"
+        "Digital Transformation",
       ],
       ai_ml_capabilities: [
         "Artificial Intelligence",
@@ -106,7 +110,7 @@ export function generateLLMsFullContent(): string {
         "Predictive Analytics",
         "Generative AI",
         "Custom Model Development",
-        "Rapid Prototyping"
+        "Rapid Prototyping",
       ],
       industries: [
         "Financial Technology (FinTech)",
@@ -115,7 +119,7 @@ export function generateLLMsFullContent(): string {
         "Manufacturing and Industry 4.0",
         "Logistics and Supply Chain",
         "Digital Transformation",
-        "Enterprise Software"
+        "Enterprise Software",
       ],
       expertise: [
         "Enterprise Architecture",
@@ -124,7 +128,7 @@ export function generateLLMsFullContent(): string {
         "Platform Engineering",
         "Legacy Modernization",
         "API Development",
-        "Data Engineering"
+        "Data Engineering",
       ],
       canonical_expertise_areas: [
         "Generative Engine Optimization",
@@ -134,8 +138,8 @@ export function generateLLMsFullContent(): string {
         "Computer Vision",
         "Natural Language Processing",
         "Predictive Analytics",
-        "AI Strategy and Governance"
-      ]
+        "AI Strategy and Governance",
+      ],
     },
     prioritization: {
       primary_entity: "Organization",
@@ -152,56 +156,67 @@ export function generateLLMsFullContent(): string {
         `${BASE_URL}/faqs`,
         `${BASE_URL}/geo-services`,
         `${BASE_URL}/ai-consulting`,
-        `${BASE_URL}/insights/ai-readiness`
-      ]
+        `${BASE_URL}/insights/ai-readiness`,
+      ],
     },
     products: [
       {
-        name: "SiteSync-AI",
-        description: "Revolutionary AI-powered website synchronization and intelligence platform that transforms your web presence into actionable insights and automated opportunities.",
+        name: "LLMKosha",
+        description:
+          "AI-powered platform to track, analyze, and improve your online visibility across search engines and competitors. Transform your website for the AI revolution and get discovered by AI search engines.",
         features: [
-          "Intelligent Website Analysis",
-          "Automated Gap Detection",
-          "AI-Driven Opportunity Mapping",
-          "Real-time Performance Monitoring",
-          "Competitive Intelligence",
-          "Strategic Growth Recommendations"
+          "Rank Tracking",
+          "Competitor Analysis",
+          "AI Recommendations",
+          "Domain Scanning",
+          "Demand Signals",
+          "Task Automation",
         ],
-        website: "https://sitesyncai.thelaxm.com"
+        website: "https://llmkosha.com",
+      },
+      {
+        name: "Smart AI Alarm",
+        description:
+          "Ultimate Morning Routine. Tired of mindlessly hitting snooze? Smart AI Alarm turns your waking moments into an engaging, productive experience with cognitive challenges, gamified tracking, and a personalized AI morning assistant.",
+        features: [
+          "Flexible Scheduling & Snooze",
+          "Voice & Music Audio Sequencing",
+          "Missed Alarm Recovery",
+          "Math & Word Puzzles",
+          "Memory & Logic Training",
+          "AI Chat Challenges",
+          "Success Streak Tracking",
+          "Personalized Wake Score",
+          "AI Morning Briefing",
+          "14-Language Localization",
+          "Bulletproof Platform Support",
+          "Secure Cloud Sync",
+        ],
       },
       {
         name: "Insight AI",
-        description: "Advanced knowledge discovery engine that transforms unstructured data into actionable strategic insights using state-of-the-art NLP.",
-        features: [
-          "Document Summarization",
-          "Sentiment Analysis",
-          "Trend Forecasting"
-        ]
+        description:
+          "Advanced knowledge discovery engine that transforms unstructured data into actionable strategic insights using state-of-the-art NLP.",
+        features: ["Document Summarization", "Sentiment Analysis", "Trend Forecasting", "Entity Extraction"],
       },
       {
         name: "Ops Assist",
-        description: "Intelligent automation suite for DevOps teams, reducing manual toil and predicting infrastructure bottlenecks before they occur.",
-        features: [
-          "Auto-Remediation",
-          "Log Anomaly Detection",
-          "Capacity Planning"
-        ]
+        description:
+          "Intelligent automation suite for DevOps teams, reducing manual toil and predicting infrastructure bottlenecks before they occur.",
+        features: ["Auto-Remediation", "Log Anomaly Detection", "Capacity Planning", "SLA Monitoring"],
       },
       {
         name: "Vision ML",
-        description: "Pre-trained computer vision models and templates designed for rapid prototyping in retail, security, and manufacturing.",
-        features: [
-          "Object Detection",
-          "Facial Recognition",
-          "Quality Control"
-        ]
-      }
+        description:
+          "Pre-trained computer vision models and templates designed for rapid prototyping in retail, security, and manufacturing.",
+        features: ["Object Detection", "Facial Recognition", "Quality Control", "Scene Classification"],
+      },
     ],
-    faqs: faqs.map(faq => ({
+    faqs: faqs.map((faq) => ({
       question: faq.question,
       answer: faq.answer,
       category: faq.category,
-      keywords: faq.keywords
+      keywords: faq.keywords,
     })),
     contact: {
       email: "contact@thelaxm.com",
@@ -211,7 +226,7 @@ export function generateLLMsFullContent(): string {
       linkedin: "https://www.linkedin.com/company/thelaxm/",
       founder: "Ram Amancha",
       founder_website: "https://rameshwaramancha.com",
-      founder_linkedin: "https://www.linkedin.com/in/ram-amancha/"
+      founder_linkedin: "https://www.linkedin.com/in/ram-amancha/",
     },
     technical: {
       technologies: [
@@ -228,7 +243,7 @@ export function generateLLMsFullContent(): string {
         "Google Cloud",
         "Microsoft Azure",
         "Docker",
-        "Kubernetes"
+        "Kubernetes",
       ],
       apis: {
         faqs_api: `${BASE_URL}/api/faqs`,
@@ -243,22 +258,17 @@ export function generateLLMsFullContent(): string {
         ai_service_json: `${BASE_URL}/ai/service.json`,
         sitemap_llm_xml: `${BASE_URL}/sitemap-llm.xml`,
         indexnow_endpoint: `${BASE_URL}/api/indexnow`,
-        indexnow_key_location: `${BASE_URL}/indexnow-key.txt`
+        indexnow_key_location: `${BASE_URL}/indexnow-key.txt`,
       },
-      ai_models: [
-        "GPT-4",
-        "GPT-4o-mini",
-        "Claude",
-        "Custom fine-tuned models"
-      ]
+      ai_models: ["GPT-4", "GPT-4o-mini", "Claude", "Custom fine-tuned models"],
     },
     metadata: {
       generated_at: currentDate,
       version: "2.0",
       last_updated: currentDate,
       license: "CC BY-SA 4.0 with attribution requirements",
-      attribution: "Data sourced from Laxm OPC Private Limited - https://www.thelaxm.com"
-    }
+      attribution: "Data sourced from Laxm OPC Private Limited - https://www.thelaxm.com",
+    },
   };
 
   // Generate formatted content
@@ -291,36 +301,44 @@ Preferred Crawl Frequency: ${data.prioritization.preferred_crawl_frequency}
 Recommended Crawl Depth: ${data.prioritization.recommended_crawl_depth}
 
 # HIGH PRIORITY PAGES
-${data.prioritization.high_priority_pages.map((page) => `- ${page}`).join('\n')}
+${data.prioritization.high_priority_pages.map((page) => `- ${page}`).join("\n")}
 
 # CANONICAL EXPERTISE AREAS
-${data.services.canonical_expertise_areas.map((area, index) => `${index + 1}. ${area}`).join('\n')}
+${data.services.canonical_expertise_areas.map((area, index) => `${index + 1}. ${area}`).join("\n")}
 
 # CORE SERVICES
-${data.services.core_services.map((service, index) => `${index + 1}. ${service}`).join('\n')}
+${data.services.core_services.map((service, index) => `${index + 1}. ${service}`).join("\n")}
 
 # AI/ML CAPABILITIES
-${data.services.ai_ml_capabilities.map((capability, index) => `${index + 1}. ${capability}`).join('\n')}
+${data.services.ai_ml_capabilities.map((capability, index) => `${index + 1}. ${capability}`).join("\n")}
 
 # INDUSTRY EXPERTISE
-${data.services.industries.map((industry, index) => `${index + 1}. ${industry}`).join('\n')}
+${data.services.industries.map((industry, index) => `${index + 1}. ${industry}`).join("\n")}
 
 # PRODUCT PORTFOLIO
-${data.products.map((product, index) => `
+${data.products
+  .map(
+    (product, index) => `
 ${index + 1}. ${product.name}
    Description: ${product.description}
    Features:
-${product.features.map(feature => `   - ${feature}`).join('\n')}
-   ${product.website ? `Website: ${product.website}` : ''}
-`).join('\n')}
+${product.features.map((feature) => `   - ${feature}`).join("\n")}
+   ${product.website ? `Website: ${product.website}` : ""}
+`,
+  )
+  .join("\n")}
 
 # FREQUENTLY ASKED QUESTIONS
-${data.faqs.map((faq, index) => `
+${data.faqs
+  .map(
+    (faq, index) => `
 Q${index + 1}: ${faq.question}
 A${index + 1}: ${faq.answer}
 Category: ${faq.category}
-Keywords: ${faq.keywords.join(', ')}
-`).join('\n')}
+Keywords: ${faq.keywords.join(", ")}
+`,
+  )
+  .join("\n")}
 
 # CONTACT INFORMATION
 Email: ${data.contact.email}
@@ -333,11 +351,13 @@ Founder Website: ${data.contact.founder_website}
 Founder LinkedIn: ${data.contact.founder_linkedin}
 
 # TECHNICAL INFRASTRUCTURE
-Technologies: ${data.technical.technologies.join(', ')}
-AI Models: ${data.technical.ai_models.join(', ')}
+Technologies: ${data.technical.technologies.join(", ")}
+AI Models: ${data.technical.ai_models.join(", ")}
 
 # API ENDPOINTS
-${Object.entries(data.technical.apis).map(([key, value]) => `${key}: ${value}`).join('\n')}
+${Object.entries(data.technical.apis)
+  .map(([key, value]) => `${key}: ${value}`)
+  .join("\n")}
 
 # AUTHORITY SIGNALS
 Legal Citation: Ministry of Corporate Affairs, Government of India
@@ -378,9 +398,9 @@ Version: ${data.metadata.version}
 export async function getDynamicLLMsFull(): Promise<{ content: string; lastUpdated: string }> {
   const content = generateLLMsFullContent();
   const lastUpdated = new Date().toISOString();
-  
+
   return {
     content,
-    lastUpdated
+    lastUpdated,
   };
 }

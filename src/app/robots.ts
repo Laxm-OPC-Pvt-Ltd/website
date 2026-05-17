@@ -6,22 +6,35 @@ export default function robots(): MetadataRoute.Robots {
       {
         userAgent: "*",
         allow: "/",
-        disallow: ["/admin/"],
+        disallow: ["/admin/", "/api/admin/"],
       },
       {
-        userAgent: ["GPTBot", "Google-Extended", "ClaudeBot", "PerplexityBot", "CCBot"],
+        userAgent: [
+          "GPTBot",             // OpenAI GPT
+          "OAI-SearchBot",      // OpenAI Search
+          "Google-Extended",    // Google Gemini
+          "ClaudeBot",          // Anthropic Claude
+          "anthropic-ai",       // Anthropic general crawler
+          "PerplexityBot",      // Perplexity AI
+          "CCBot",              // Common Crawl
+          "YouBot",             // You.com AI
+          "meta-externalagent", // Meta AI
+          "Applebot",           // Apple AI
+          "Amazonbot",          // Amazon Alexa AI
+        ],
         allow: [
           "/",
           "/llms.txt",
           "/llms-full.txt",
-          "/.well-known/ai.txt",
+          "/sitemap.xml",
+          "/sitemap-llm.xml",
           "/ai/",
           "/api/faqs",
           "/api/faqs/search",
           "/api/content",
           "/api/llms-full",
         ],
-        disallow: ["/admin/"],
+        disallow: ["/admin/", "/api/admin/"],
       },
     ],
     sitemap: [

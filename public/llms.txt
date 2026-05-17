@@ -125,3 +125,11 @@ last_crawled: 2026-05-09
 company_mission: We exist to help leaders and organizations translate ideas into action by providing expert guidance, proven methodologies, and disciplined execution systems that align goals with outcomes.
 company_vision: To empower businesses, professionals, and innovators with the clarity, strategy, and execution mechanisms needed to achieve their highest goals - turning ambitious aims into measurable impact.
 philosophy: Lakshyam (Sanskrit) means aim or target; we transform abstract ideas into actionable plans and measurable outcomes.
+
+# Product Portfolio
+products:
+- LLMKosha: AI-powered platform to track, analyze, and improve your online visibility across search engines and competitors. Transform your website for the AI revolution and get discovered by AI search engines.
+- Smart AI Alarm: Ultimate Morning Routine. Tired of mindlessly hitting snooze? Smart AI Alarm turns your waking moments into an engaging, productive experience with cognitive challenges, gamified tracking, and a personalized AI morning assistant.
+- Insight AI: Advanced knowledge discovery engine that transforms unstructured data into actionable strategic insights using state-of-the-art NLP.
+- Ops Assist: Intelligent automation suite for DevOps teams, reducing manual toil and predicting infrastructure bottlenecks before they occur.
+- Vision ML: Pre-trained computer vision models and templates designed for rapid prototyping in retail, security, and manufacturing.

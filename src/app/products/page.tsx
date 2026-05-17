@@ -5,8 +5,8 @@ import CTAButton from "@/components/CTAButton";
 export const metadata: Metadata = {
   title: "AI/ML Products & Accelerators | Laxm OPC Private Limited",
   description:
-    "Explore Laxm's AI-powered products: SiteSync-AI, Insight AI, Ops Assist, and Vision ML. Enterprise-grade accelerators that compress your time-to-value.",
-  keywords: ["Products", "AI", "ML", "SiteSync-AI", "Innovation", "Accelerators", "Laxm"],
+    "Explore Laxm's AI-powered products: LLMKosha, Insight AI, Ops Assist, and Vision ML. Enterprise-grade accelerators that compress your time-to-value.",
+  keywords: ["Products", "AI", "ML", "LLMKosha", "Insight AI", "Ops Assist", "Vision ML", "Innovation", "Accelerators", "Laxm"],
   alternates: { canonical: canonicalUrl("/products") },
   openGraph: {
     title: "AI/ML Products - Laxm OPC Private Limited",
@@ -26,21 +26,45 @@ export const metadata: Metadata = {
 const products = [
   {
     tag: "Live",
-    title: "SiteSync-AI",
+    title: "LLMKosha",
     description:
-      "Revolutionary AI-powered website synchronization and intelligence platform that transforms your web presence into actionable insights and automated opportunities.",
+      "AI-powered platform to track, analyze, and improve your online visibility across search engines and competitors. Transform your website for the AI revolution and get discovered by AI search engines.",
     features: [
-      "Intelligent Website Analysis",
-      "Automated Gap Detection",
-      "AI-Driven Opportunity Mapping",
-      "Real-time Performance Monitoring",
-      "Competitive Intelligence",
-      "Strategic Growth Recommendations",
+      "Rank Tracking",
+      "Competitor Analysis",
+      "AI Recommendations",
+      "Domain Scanning",
+      "Demand Signals",
+      "Task Automation",
     ],
-    link: "https://sitesyncai.thelaxm.com",
+    link: "https://llmkosha.com",
     cta: "Explore Product",
     iconPath:
       "M13 10V3L4 14h7v7l9-11h-7z M3 3l18 18",
+  },
+  {
+    tag: "Live",
+    title: "Smart AI Alarm",
+    description:
+      "Ultimate Morning Routine. Tired of mindlessly hitting snooze? Smart AI Alarm turns your waking moments into an engaging, productive experience with cognitive challenges, gamified tracking, and a personalized AI morning assistant.",
+    features: [
+      "Flexible Scheduling & Snooze",
+      "Voice & Music Audio Sequencing",
+      "Missed Alarm Recovery",
+      "Math & Word Puzzles",
+      "Memory & Logic Training",
+      "AI Chat Challenges",
+      "Success Streak Tracking",
+      "Personalized Wake Score",
+      "AI Morning Briefing",
+      "14-Language Localization",
+      "Bulletproof Platform Support",
+      "Secure Cloud Sync",
+    ],
+    link: "https://play.google.com/store/apps/details?id=com.laxm.smartaialarm&pcampaignid=web_share",
+    cta: "Download Now",
+    iconPath:
+      "M12 2c.5 0 1 .19 1.41.59l2.83 2.83c.78.78.78 2.05 0 2.83L12 12.59c-.78.78-2.05.78-2.83 0L6.34 8.76c-.78-.78-.78-2.05 0-2.83L9.17 2.59C9.57 2.19 10.07 2 10.57 2H12zm0 2h-1.43l-2.83 2.83L12 11.07l4.26-4.24L13.43 6H12zm-1 6a1 1 0 100 2 1 1 0 000-2zm-4 4h10v2H7v-2zm0 4h10v2H7v-2z",
   },
   {
     tag: "Beta",
@@ -75,6 +99,7 @@ const products = [
     iconPath:
       "M15 12a3 3 0 11-6 0 3 3 0 016 0z M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z",
   },
+
 ];
 
 const tagColors: Record<string, string> = {

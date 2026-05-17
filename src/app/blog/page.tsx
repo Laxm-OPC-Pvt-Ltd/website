@@ -55,7 +55,7 @@ export default async function BlogIndex({ searchParams }: BlogIndexProps) {
         <div className="mx-auto max-w-6xl relative z-10">
           <div className="text-center mb-16">
             <h1 className="text-5xl md:text-6xl font-bold text-white mb-4 tracking-tight">
-              Healthcare Technology <span className="text-[var(--gold)]">Insights</span>
+              Technology <span className="text-[var(--gold)]">Insights</span>
             </h1>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
               Expert perspectives on digital transformation, AI/ML applications, cybersecurity, and operational excellence in healthcare.
