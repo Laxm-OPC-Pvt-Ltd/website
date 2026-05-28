@@ -23,25 +23,26 @@ const poppins = Poppins({
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.thelaxm.com"),
   title: {
-    default: "LAXM — Advisory, IT Consulting, Innovation, Custom Solutions",
-    template: "%s | LAXM",
+    default: "Laxm — Founder-Friendly MVP Development & Technology Advisory",
+    template: "%s | Laxm",
   },
   description:
-    "Laxm provides advisory, IT consulting, innovation in AI/ML, and custom solutions. Rich, responsive, and scalable digital experiences.",
+    "Laxm partners with founders, SMEs, and business owners to build MVPs, AI products, and workflow automation systems. Technology advisory and hands-on execution under one roof.",
   keywords: [
     "Laxm",
-    "Advisory",
-    "IT Consulting",
-    "Innovation",
-    "AI",
-    "ML",
-    "Custom Solutions",
-    "Next.js",
+    "MVP development",
+    "fractional CTO",
+    "workflow automation",
+    "startup technical advisor",
+    "AI product development",
+    "healthcare technology",
+    "product modernization",
+    "technology advisory Hyderabad",
   ],
   openGraph: {
-    title: "Laxm — Advisory, IT Consulting, Innovation, Custom Solutions",
+    title: "Laxm — Founder-Friendly MVP Development & Technology Advisory",
     description:
-      "Trusted partner for strategy, technology, and innovation. Explore our services, products, and insights.",
+      "Build MVPs, AI products, and workflow automation with an experienced technical advisor. Laxm works with founders and SMEs to turn ideas into working products.",
     url: "https://www.thelaxm.com",
     siteName: "Laxm",
     locale: "en_US",
@@ -54,7 +55,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Laxm",
     description:
-      "Advisory, IT Consulting, Innovation (AI/ML) and Custom Solutions.",
+      "Founder-friendly MVP development, Fractional CTO, AI products, and workflow automation. Technology advisory for SMEs and idea-stage businesses.",
     creator: "@laxm",
   },
   robots: {
@@ -82,7 +83,7 @@ const jsonLd = {
     height: 512,
   },
   description:
-    "Laxm is a strategy, advisory, and technology consulting firm focused on turning ideas into execution. We help organizations define clear aims (Lakshyam), build practical strategies, and deliver measurable outcomes.",
+    "Laxm is a founder-friendly technology advisory and MVP development studio for SMEs and idea-stage businesses. We build MVPs, AI products, workflow automation systems, and provide Fractional CTO services — hands-on execution under one roof.",
   sameAs: [
     "https://www.linkedin.com/company/thelaxm/",
     "https://rameshwaramancha.com",
@@ -95,11 +96,17 @@ const jsonLd = {
     sameAs: ["https://www.linkedin.com/in/ram-amancha/"],
   },
   knowsAbout: [
+    "MVP Development",
+    "Fractional CTO",
+    "AI Product Development",
+    "Workflow Automation",
+    "Healthcare Technology",
+    "Technical Advisory",
+    "Product Modernization",
+    "Architecture Consulting",
     "Business Strategy",
-    "Execution Frameworks",
     "IT Consulting",
     "Digital Transformation",
-    "Innovation Management",
     "Startup Advisory",
   ],
   contactPoint: {

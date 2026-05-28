@@ -4,34 +4,34 @@ import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import HeroBackground from "@/components/HeroBackground";
-import RotatingText from "@/components/RotatingText";
 
 // ── Data ─────────────────────────────────────────────────────────
-const ROTATING_WORDS = ["AI-Powered", "Outcome-Driven", "Enterprise-Ready", "Future-Proof"];
-
 const METRICS = [
-  { value: "50+",   label: "Projects Delivered" },
-  { value: "100%",  label: "Client Retention" },
-  { value: "< 24h", label: "First Response" },
+  { value: "50+",  label: "Projects Delivered" },
+  { value: "100%", label: "Client Retention" },
+  { value: "< 48h", label: "Proposal Turnaround" },
 ];
 
 const CAPABILITIES = [
-  { icon: "◈", label: "AI / ML Development" },
-  { icon: "◇", label: "Technology Advisory" },
-  { icon: "◆", label: "Strategic Consulting" },
-  { icon: "◉", label: "Innovation Programs" },
+  { icon: "◈", label: "MVP Development" },
+  { icon: "◇", label: "Fractional CTO" },
+  { icon: "◆", label: "AI Products" },
+  { icon: "◉", label: "Technical Advisory" },
+  { icon: "◎", label: "Workflow Automation" },
 ];
 
-const referralOverrides: Record<string, { headline: string; sub: string; cta: string }> = {
+const referralOverrides: Record<string, { headline: string; sub: string; cta: string; ctaHref: string }> = {
   linkedin: {
-    headline: "Let's Build Something Remarkable",
-    sub: "Enterprise AI/ML solutions for leaders ready to transform their industry.",
-    cta: "Schedule a Consultation",
+    headline: "You have the vision. We'll build the product.",
+    sub: "Founder-friendly technology advisory and MVP development for businesses ready to move.",
+    cta: "Book a Strategy Call",
+    ctaHref: "/contact?type=strategy&ref=linkedin",
   },
   twitter: {
-    headline: "AI Innovation That Drives Results",
-    sub: "From idea to production-ready AI — fast, precise, and measurable.",
-    cta: "Explore Solutions",
+    headline: "Turn your idea into a working product.",
+    sub: "Technology advisory and MVP development for founders and SMEs — without an in-house team.",
+    cta: "Discuss Your Idea",
+    ctaHref: "/contact?type=idea&ref=twitter",
   },
 };
 
@@ -78,7 +78,7 @@ export function GenerativeHero() {
             <span className="relative inline-flex h-2 w-2 rounded-full bg-green-400" />
           </span>
           <span className="text-xs font-semibold tracking-[0.15em] uppercase text-[var(--gold)]">
-            Accepting New Projects · 2026
+            Currently Accepting New Clients · 2026
           </span>
         </motion.div>
 
@@ -90,15 +90,14 @@ export function GenerativeHero() {
           className="text-5xl sm:text-6xl md:text-[5.25rem] lg:text-[6rem] font-extrabold tracking-tight text-white leading-[1.05] mb-5"
         >
           {override ? (
-            <span className="text-gradient-gold">{override.headline}</span>
+            <>
+              <span className="text-white">{override.headline.split(".")[0]}.</span>
+              <span className="block mt-2 text-gradient-gold">{override.headline.split(".").slice(1).join(".").trim()}</span>
+            </>
           ) : (
             <>
-              Transform Your Business
-              <span className="block mt-2">
-                Into a{" "}
-                <RotatingText words={ROTATING_WORDS} interval={2800} />
-                <span className="text-white"> Reality</span>
-              </span>
+              You have the vision.
+              <span className="block mt-2 text-gradient-gold">We&apos;ll build the product.</span>
             </>
           )}
         </motion.h1>
@@ -121,7 +120,7 @@ export function GenerativeHero() {
           style={{ color: "rgba(255,255,255,0.55)" }}
         >
           {override?.sub ??
-            "Laxm OPC Private Limited partners with forward-thinking companies to design, build, and scale AI-driven products — with enterprise-grade quality and startup agility."}
+            "Technology advisory and MVP development for founders, business owners, and SMEs — without the overhead of an in-house engineering team."}
         </motion.p>
 
         {/* ── CTA Buttons ──────────────────────────────────────── */}
@@ -131,8 +130,8 @@ export function GenerativeHero() {
           transition={{ duration: 0.55, delay: 0.7 }}
           className="flex flex-col sm:flex-row gap-4 items-center mb-16"
         >
-          <a
-            href="#configurator"
+          <Link
+            href={override?.ctaHref ?? "/contact?type=strategy"}
             onClick={handleCTA}
             className="group relative inline-flex items-center gap-2 px-8 py-4 rounded-full text-[var(--navy)] text-sm font-bold tracking-wide hover:scale-105 active:scale-100 transition-all duration-300 overflow-hidden"
             style={{
@@ -142,13 +141,13 @@ export function GenerativeHero() {
             onMouseEnter={(e) => (e.currentTarget.style.boxShadow = "0 0 55px rgba(212,175,55,0.45)")}
             onMouseLeave={(e) => (e.currentTarget.style.boxShadow = "0 0 30px rgba(212,175,55,0.25)")}
           >
-            <span className="relative z-10">{override?.cta ?? "Configure Your Project"}</span>
+            <span className="relative z-10">{override?.cta ?? "Book a Strategy Call"}</span>
             <span className="relative z-10 transition-transform duration-300 group-hover:translate-x-1">→</span>
             <span className="absolute inset-0 translate-x-[-100%] bg-gradient-to-r from-transparent via-white/25 to-transparent group-hover:translate-x-[100%] transition-transform duration-700 rounded-full" />
-          </a>
+          </Link>
 
           <Link
-            href="/about"
+            href="/services"
             className="inline-flex items-center gap-2 px-8 py-4 rounded-full border text-sm font-semibold hover:text-white transition-all duration-300 backdrop-blur-sm"
             style={{
               background: "rgba(255,255,255,0.04)",
@@ -156,7 +155,7 @@ export function GenerativeHero() {
               color: "rgba(255,255,255,0.70)",
             }}
           >
-            Learn About Laxm
+            Explore Our Services
             <span className="text-xs" style={{ color: "rgba(255,255,255,0.30)" }}>↗</span>
           </Link>
         </motion.div>
