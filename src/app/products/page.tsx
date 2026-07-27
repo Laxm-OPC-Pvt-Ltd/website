@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { canonicalUrl } from "@/lib/metadata";
 import CTAButton from "@/components/CTAButton";
-
+import Image from "next/image"
 export const metadata: Metadata = {
   title: "AI/ML Products & Accelerators | Laxm OPC Private Limited",
   description:
@@ -44,7 +44,8 @@ type Product = {
   androidLink: string | null;
   iosLink: string | null;
   webLink: string | null;
-  iconPath: string;
+  iconPath: string | null;
+  faviconPath: string | null;
 };
 
 function DownloadBadge({
@@ -130,6 +131,7 @@ const products: Product[] = [
     iosLink: null,
     webLink: "https://llmkosha.com",
     iconPath: "M13 10V3L4 14h7v7l9-11h-7z M3 3l18 18",
+    faviconPath: null
   },
   {
     tag: "Live",
@@ -156,7 +158,35 @@ const products: Product[] = [
     webLink: null,
     iconPath:
       "M12 2c.5 0 1 .19 1.41.59l2.83 2.83c.78.78.78 2.05 0 2.83L12 12.59c-.78.78-2.05.78-2.83 0L6.34 8.76c-.78-.78-.78-2.05 0-2.83L9.17 2.59C9.57 2.19 10.07 2 10.57 2H12zm0 2h-1.43l-2.83 2.83L12 11.07l4.26-4.24L13.43 6H12zm-1 6a1 1 0 100 2 1 1 0 000-2zm-4 4h10v2H7v-2zm0 4h10v2H7v-2z",
+    faviconPath: null
   },
+  {
+    tag: "Live",
+    title: "NA DIARY",
+    description:
+      "NaDiary is a modular journaling platform that adapts to your day, not the other way around. With block-based entries, morning planning, evening tracking, and smart notifications, it creates a seamless daily reflection habit for users who want flexibility and intelligence in their journaling practice.",
+    features: [
+      "Daily Canvas for Morning Planning & Evening Reflection",
+      "Daily Selfie",
+      "Smart Statistics",
+      "Customize per your need",
+      "Offline Support with Cloud Sync",
+      "Multi Device Sync and Support",
+      "Cross Platform Support",
+      "Most Features are Free",
+      "Download Journal as PDF",
+      "No Limitations on blocks and Data",
+      "Awesome New Features",
+      "Secure Cloud Sync",
+    ],
+    androidLink:
+      "https://play.google.com/store/apps/details?id=com.laxm.nadiary",
+    iosLink: "https://apps.apple.com/us/app/na-diary/id6794532320",
+    webLink: "https://nadiary.thelaxm.com/",
+    iconPath: null,
+    faviconPath: "https://nadiary.thelaxm.com/favicon.svg",
+  },
+
   {
     tag: "Beta",
     title: "Insight AI",
@@ -173,6 +203,7 @@ const products: Product[] = [
     webLink: null,
     iconPath:
       "M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z",
+    faviconPath: null
   },
   {
     tag: "Coming Soon",
@@ -190,6 +221,7 @@ const products: Product[] = [
     webLink: null,
     iconPath:
       "M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z M15 12a3 3 0 11-6 0 3 3 0 016 0z",
+    faviconPath: null
   },
   {
     tag: "Coming Soon",
@@ -207,6 +239,7 @@ const products: Product[] = [
     webLink: null,
     iconPath:
       "M15 12a3 3 0 11-6 0 3 3 0 016 0z M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z",
+    faviconPath: null
   },
 ];
 
@@ -254,20 +287,31 @@ export default function Products() {
                 >
                   <div className="mb-6 flex items-start justify-between">
                     <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-[var(--gold)]/10 transition-colors duration-300 group-hover:bg-[var(--gold)]">
-                      <svg
-                        className="h-6 w-6 text-[var(--gold)] transition-colors group-hover:text-[var(--navy)]"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={1.5}
-                          d={product.iconPath}
+                      {product.iconPath ? (
+                        <svg
+                          className="h-6 w-6 text-[var(--gold)] transition-colors group-hover:text-[var(--navy)]"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          stroke="currentColor"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={1.5}
+                            d={product.iconPath}
+                          />
+                        </svg>
+                      ) : product.faviconPath ? (
+                        <Image
+                          src={product.faviconPath}
+                          alt={product.title}
+                          width={24}
+                          height={24}
+                          className="h-6 w-6"
                         />
-                      </svg>
+                      ) : null}
                     </div>
+
                     <span
                       className={`rounded-full px-3 py-1 text-xs font-semibold ${tagColors[product.tag]}`}
                     >
