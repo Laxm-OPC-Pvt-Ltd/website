@@ -50,7 +50,8 @@ export function organizationSchema() {
     ],
     address: {
       "@type": "PostalAddress",
-      streetAddress: "WeWork Rajapushpa Summit, Nanakramguda, Financial District",
+      streetAddress:
+        "WeWork Rajapushpa Summit, Nanakramguda, Financial District",
       addressLocality: "Hyderabad",
       addressRegion: "Telangana",
       postalCode: "500032",
@@ -156,7 +157,9 @@ export function blogPostingSchema(post: Post) {
     image: post.image
       ? {
           "@type": "ImageObject",
-          url: post.image.startsWith("http") ? post.image : `${BASE_URL}${post.image}`,
+          url: post.image.startsWith("http")
+            ? post.image
+            : `${BASE_URL}${post.image}`,
         }
       : {
           "@type": "ImageObject",
@@ -182,9 +185,16 @@ export function blogPostingSchema(post: Post) {
 }
 
 export function newsArticleSchema(article: NewsArticle) {
-  const url = article.url.startsWith("http") ? article.url : `${BASE_URL}${article.url}`;
+  const url = article.url.startsWith("http")
+    ? article.url
+    : `${BASE_URL}${article.url}`;
   const author = article.author || "Laxm OPC Private Limited";
-  const authorIsPerson = article.author && article.author !== "Laxm" && !article.author.includes("Laxm");
+  const authorIsPerson =
+    article.author &&
+    article.author !== "Laxm" &&
+    !article.author.includes("Laxm");
+  const bodySource = article.contentHtml ?? article.description;
+  const wordCount = approximateWordCount(bodySource);
 
   return {
     "@context": "https://schema.org",
@@ -192,7 +202,7 @@ export function newsArticleSchema(article: NewsArticle) {
     "@id": `${url}#newsarticle`,
     headline: article.title,
     description: article.description,
-    articleBody: article.content || article.description,
+    articleBody: bodySource,
     datePublished: article.publishDate,
     dateModified: article.publishDate,
     url,
@@ -202,6 +212,8 @@ export function newsArticleSchema(article: NewsArticle) {
     },
     inLanguage: "en-US",
     keywords: article.tags?.join(", "),
+    articleSection: article.category,
+    wordCount: wordCount > 0 ? wordCount : undefined,
     author: authorIsPerson
       ? {
           "@type": "Person",
@@ -223,13 +235,22 @@ export function newsArticleSchema(article: NewsArticle) {
         url: `${BASE_URL}/laxm_logo.png`,
       },
     },
-    image: {
-      "@type": "ImageObject",
-      url: `${BASE_URL}/laxm_logo.png`,
-    },
+    image: article.image
+      ? {
+          "@type": "ImageObject",
+          url: article.image.startsWith("http")
+            ? article.image
+            : `${BASE_URL}${article.image}`,
+        }
+      : {
+          "@type": "ImageObject",
+          url: `${BASE_URL}/laxm_logo.png`,
+        },
     citation: article.references?.map((ref) => ({
       "@type": "CreativeWork",
-      url: ref,
+      name: ref.label,
+      url: ref.url,
+      datePublished: ref.date,
     })),
     mentions: article.tags?.map((tag) => ({
       "@type": "Thing",
@@ -246,7 +267,9 @@ export function newsListingSchema(articles: NewsArticle[]) {
     description: "Latest news, announcements, and updates from Laxm.",
     numberOfItems: articles.length,
     itemListElement: articles.map((article, index) => {
-      const url = article.url.startsWith("http") ? article.url : `${BASE_URL}${article.url}`;
+      const url = article.url.startsWith("http")
+        ? article.url
+        : `${BASE_URL}${article.url}`;
       return {
         "@type": "ListItem",
         position: index + 1,
