@@ -5,7 +5,6 @@ import "./globals.css";
 import Link from "next/link";
 import Logo from "@/components/Logo";
 import LinkedInIcon from "@/components/icons/LinkedIn";
-import { canonicalUrl } from "@/lib/metadata";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -47,9 +46,6 @@ export const metadata: Metadata = {
     siteName: "Laxm",
     locale: "en_US",
     type: "website",
-  },
-  alternates: {
-    canonical: canonicalUrl("/"),
   },
   twitter: {
     card: "summary_large_image",
@@ -136,7 +132,8 @@ const websiteJsonLd = {
     "@type": "SearchAction",
     target: {
       "@type": "EntryPoint",
-      urlTemplate: "https://www.thelaxm.com/api/faqs/search?q={search_term_string}",
+      urlTemplate:
+        "https://www.thelaxm.com/api/faqs/search?q={search_term_string}",
     },
     "query-input": "required name=search_term_string",
   },
@@ -390,7 +387,10 @@ export default function RootLayout({
                   placeholder="Enter your email"
                   className="bg-white/5 border border-white/10 rounded-lg px-4 py-2.5 text-sm w-full focus:outline-none focus:border-[var(--gold)] focus:ring-1 focus:ring-[var(--gold)] transition-all placeholder:text-white/30 text-white"
                 />
-                <button className="bg-[var(--gold)] text-[var(--navy)] px-4 py-2.5 rounded-lg text-sm font-bold hover:brightness-110 transition-all shadow-lg shadow-[var(--gold)]/20" aria-label="Subscribe to newsletter">
+                <button
+                  className="bg-[var(--gold)] text-[var(--navy)] px-4 py-2.5 rounded-lg text-sm font-bold hover:brightness-110 transition-all shadow-lg shadow-[var(--gold)]/20"
+                  aria-label="Subscribe to newsletter"
+                >
                   Go
                 </button>
               </div>
@@ -400,7 +400,10 @@ export default function RootLayout({
 
         <footer className="bg-[#01040f] border-t border-white/5">
           <div className="mx-auto max-w-7xl px-6 py-8 text-xs font-medium text-white/40 flex flex-col md:flex-row items-center justify-between gap-4">
-            <p>© {new Date().getFullYear()} Laxm OPC Private Limited. All rights reserved.</p>
+            <p>
+              © {new Date().getFullYear()} Laxm OPC Private Limited. All rights
+              reserved.
+            </p>
             <p>Designed with precision. From India to the World.</p>
           </div>
         </footer>

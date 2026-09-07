@@ -31,6 +31,10 @@ const nextConfig: NextConfig = {
     ppr: false,
   },
 
+  // Canonical URL shape: no trailing slash, always www
+  trailingSlash: false,
+  skipMiddlewareUrlNormalize: false,
+
   // Restrict image optimisation to local assets only.
   // No remotePatterns keeps the self-hosted Image Optimizer from being
   // abused as an open proxy (remotePatterns DoS / disk cache exhaustion).
@@ -44,13 +48,18 @@ const nextConfig: NextConfig = {
     formats: ["image/avif", "image/webp"],
   },
 
-  // Redirect bare domain to www to prevent duplicate-without-canonical issues
+  // Redirect bare domain to www and trailing-slash to canonical shape
   async redirects() {
     return [
       {
         source: "/:path*",
         has: [{ type: "host", value: "thelaxm.com" }],
         destination: "https://www.thelaxm.com/:path*",
+        permanent: true,
+      },
+      {
+        source: "/((?!api/|_next/|_static/|_vercel|[\\w-]+\\.\\w+).*)/",
+        destination: "/$1",
         permanent: true,
       },
     ];

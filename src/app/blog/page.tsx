@@ -12,22 +12,81 @@ import {
 
 const POSTS_PER_PAGE = 6;
 
-export const metadata: Metadata = {
-  title: "Blog - Laxm",
-  description:
-    "Expert insights on digital transformation, AI/ML, healthcare technology, and operational excellence.",
-  keywords: [
-    "healthcare blog",
-    "digital transformation",
-    "healthcare technology",
-    "AI in healthcare",
-    "EHR",
-    "patient experience",
-  ],
-  alternates: {
-    canonical: canonicalUrl("/blog"),
-  },
+type BlogIndexMetaProps = {
+  searchParams?: Promise<{
+    page?: string | string[];
+  }>;
 };
+
+export async function generateMetadata({
+  searchParams,
+}: BlogIndexMetaProps): Promise<Metadata> {
+  const resolved = await searchParams;
+  const rawPage = Array.isArray(resolved?.page)
+    ? resolved?.page[0]
+    : resolved?.page;
+  const totalPages = Math.max(
+    1,
+    Math.ceil(
+      [...posts].sort(
+        (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime(),
+      ).length / POSTS_PER_PAGE,
+    ),
+  );
+  const requestedPage = Number.parseInt(rawPage ?? "1", 10);
+  const currentPage =
+    Number.isFinite(requestedPage) && requestedPage > 0
+      ? Math.min(Math.floor(requestedPage), totalPages)
+      : 1;
+
+  const meta: Metadata = {
+    title:
+      currentPage > 1 ? `Blog - Page ${currentPage} | Laxm` : "Blog - Laxm",
+    description:
+      "Expert insights on digital transformation, AI/ML, healthcare technology, and operational excellence.",
+    keywords: [
+      "healthcare blog",
+      "digital transformation",
+      "healthcare technology",
+      "AI in healthcare",
+      "EHR",
+      "patient experience",
+    ],
+    alternates: {
+      canonical: canonicalUrl("/blog"),
+    },
+    openGraph: {
+      title:
+        currentPage > 1 ? `Blog - Page ${currentPage} | Laxm` : "Blog - Laxm",
+      description:
+        "Expert insights on digital transformation, AI/ML, healthcare technology, and operational excellence.",
+      url:
+        currentPage > 1
+          ? canonicalUrl(`/blog?page=${currentPage}`)
+          : canonicalUrl("/blog"),
+      siteName: "Laxm",
+      type: "website",
+      images: [
+        {
+          url: "/laxm_logo.png",
+          width: 1200,
+          height: 630,
+          alt: "Laxm Blog — Technology Insights",
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title:
+        currentPage > 1 ? `Blog - Page ${currentPage} | Laxm` : "Blog - Laxm",
+      description:
+        "Expert insights on digital transformation, AI/ML, healthcare technology, and operational excellence.",
+      images: ["/laxm_logo.png"],
+    },
+  };
+
+  return meta;
+}
 
 type BlogIndexProps = {
   searchParams?: Promise<{
@@ -69,6 +128,9 @@ export default async function BlogIndex({ searchParams }: BlogIndexProps) {
     { name: "Insights", url: `${BASE_URL}/blog` },
   ]);
 
+  const prevPage = currentPage > 1 ? currentPage - 1 : null;
+  const nextPage = currentPage < totalPages ? currentPage + 1 : null;
+
   return (
     <>
       <Script
@@ -86,6 +148,19 @@ export default async function BlogIndex({ searchParams }: BlogIndexProps) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
       />
+      {prevPage !== null && (
+        <link
+          rel="prev"
+          href={
+            prevPage === 1
+              ? canonicalUrl("/blog")
+              : canonicalUrl(`/blog?page=${prevPage}`)
+          }
+        />
+      )}
+      {nextPage !== null && (
+        <link rel="next" href={canonicalUrl(`/blog?page=${nextPage}`)} />
+      )}
       <main className="min-h-screen bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950">
         {/* Hero Section */}
         <section className="relative overflow-hidden pt-32 pb-16 px-6">
